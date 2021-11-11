@@ -87,7 +87,7 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.root.hashedPassword = "$6$urnJis2R$AxkQdaTPQB7UIOF0xQHZzHShulvto9U4F/K/AP5ePKcCiOemfkD8TzmhWjzWSL2kkaKOKp63nE9rgde/GeWyL/";
+  users.users.root.hashedPassword = "$6$jjdykpb.kwVJ.wY4$sKFyUPK6HpWH3twrCodgWOu5EIPlzS/Zqa4kPWTOnpuzICRDAFXUrBisvWOEX464THhykP0xFxr674R8KjDzT1";
   users.users.pasha = {
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
