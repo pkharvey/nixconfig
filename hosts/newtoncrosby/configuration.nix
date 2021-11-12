@@ -107,6 +107,7 @@
     firefox
     foot
     git
+    gnumake42
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
