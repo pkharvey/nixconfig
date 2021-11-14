@@ -79,6 +79,12 @@
   services.xserver.displayManager.gdm.enable = true;
   # services.xserver.desktopManager.plasma5.enable = true;
 
+  # Enable xdg.portal for Wayland
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs;
+      [ xdg-desktop-portal-wlr xdg-desktop-portal-gtk ];
+  };
 
   # Configure keymap in X11
   # services.xserver.layout = "us";
