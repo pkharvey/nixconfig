@@ -119,6 +119,7 @@
     foot
     git
     gnumake42
+    element-desktop
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
