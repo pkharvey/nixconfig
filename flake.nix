@@ -5,9 +5,13 @@
     nixpkgs.url = "github:/nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
     robotnix.url = "github:danielfullmer/robotnix";
+    firefox = {
+      url = "github:colemickens/flake-firefox-nightly";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, robotnix, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, robotnix, firefox, ... }@inputs: {
 
     # Applies the function `robotnixSystem` to each of the attributes in the
     # set, for example `hlte`. This means I can have a set of phones to build.
