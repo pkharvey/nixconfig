@@ -1,7 +1,12 @@
 {
   # Configures a list of networks I want to connect to.
+  # NOT: $ mkpasswd -m sha-512
+  # $ wpa_passphrase SSID password
   networking.wireless.networks = { 
+    Pixel_1852.pskRaw = "0929bd89543ec23ee382b47273b1e54cf79692acc40e4067a56ae662dc553a5a";
     mossgate.pskRaw = "be69a2c1c76bf677d7ee2e82dcc8fa5e85971277c2ba0cee3e2e9f41290f8a5a";
+    HUAWEI-0F6E.pskRaw = "07513a7bd6d9e2041b78c4e7af8d33b3dada677819980fe000b82cd7b96ff869";
+    AndroidAP_1445.pskRaw = "4b078244546e82f5f3d555283c4400dba6e6089b6baf452500c2e2aa4f556f09";  # psk="73tcbeq9rzihzub"
     goatControl.pskRaw = "ec7319b43260eb9127295667cc1d5d2dfc4c9e57574415f0b541c04e30e868ba";
     Astral_Ship_5GHz.pskRaw = "157bddfe695338f0fc6a2cfa88dbb6134a3489579f7e748714fa1ae2e8a82192";
     Astral_Ship.pskRaw = "ff866b7b9494bd6915c28a06c8604d1e2396e590e64f71b2fdf9c0c9709ec2c4";
