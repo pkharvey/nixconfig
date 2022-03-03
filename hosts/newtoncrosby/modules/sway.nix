@@ -1,6 +1,7 @@
 { pkgs, lib, config, ... }:
 
 {
+  fonts.enableDefaultFonts = true;
 
   environment.variables = {
     MOZ_ENABLE_WAYLAND = "1";
