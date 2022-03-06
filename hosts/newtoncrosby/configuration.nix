@@ -11,6 +11,7 @@
       ./modules/sway.nix
       ./modules/wireless.nix
       ./modules/audio.nix
+      # ./modules/ups.nix
     ];
 
   nix = {
