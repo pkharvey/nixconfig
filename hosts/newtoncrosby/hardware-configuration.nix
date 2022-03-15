@@ -28,8 +28,7 @@
       fsType = "zfs";
     };
 
-  swapDevices =
-    [ { device = "/dev/disk/by-uuid/0ec42a05-baba-413b-b8b3-9716e100d384"; }
-    ];
+  swapDevices = [ ];
 
+  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

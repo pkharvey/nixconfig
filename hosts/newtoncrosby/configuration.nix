@@ -28,7 +28,7 @@
   # boot.loader.grub.efiInstallAsRemovable = true;
   # boot.loader.efi.efiSysMountPoint = "/boot/efi";
   # Define on which hard drive you want to install Grub.
-  boot.loader.grub.device = "/dev/sda"; # or "nodev" for efi only
+  boot.loader.grub.device = "/dev/disk/by-id/ata-ADATA_SU630_2K442L2225YW"; # or "nodev" for efi only
 
   #boot.kernelPackages = pkgs.linuxPackages_latest;
   #boot.kernelPackages = pkgs.linuxPackages_5_14;
