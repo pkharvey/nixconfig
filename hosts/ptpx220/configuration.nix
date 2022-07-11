@@ -13,6 +13,7 @@
       ./modules/audio.nix
       "${inputs.self}/mixins/editor/nvim.nix"
 #      "${inputs.self}/mixins/printing.nix"
+      "${inputs.self}/mixins/avahi.nix"
       # ./modules/ups.nix
     ];
 
