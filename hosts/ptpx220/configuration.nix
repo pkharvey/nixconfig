@@ -107,7 +107,7 @@
   users.users.root.hashedPassword = "$6$jjdykpb.kwVJ.wY4$sKFyUPK6HpWH3twrCodgWOu5EIPlzS/Zqa4kPWTOnpuzICRDAFXUrBisvWOEX464THhykP0xFxr674R8KjDzT1";
   users.users.pasha = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "dialout" ]; # Enable ‘sudo’ for the user.
     hashedPassword = "$6$0GAwzY9tiFg9$.XVNuKseZryk3LGtbtJ7cUJ5cL.A5w4.UFeZ5lKuRaycUbZjoOwR.M34EZcGu6Bn.3wgUjrui.j.pTBFYp3Ph0";
   };
 
