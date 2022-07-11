@@ -11,6 +11,7 @@
       ./modules/sway.nix
       ./modules/wireless.nix
       ./modules/audio.nix
+      "${inputs.self}/mixins/editor/nvim.nix"
       # ./modules/ups.nix
     ];
 
