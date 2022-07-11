@@ -12,6 +12,7 @@
       ./modules/wireless.nix
       ./modules/audio.nix
       "${inputs.self}/mixins/editor/nvim.nix"
+#      "${inputs.self}/mixins/printing.nix"
       # ./modules/ups.nix
     ];
 
