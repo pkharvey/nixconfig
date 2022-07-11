@@ -22,6 +22,9 @@
     '';
    };
 
+  time.timeZone = "Europe/London";
+  i18n.defaultLocale = "en_GB.UTF-8";
+
   boot = {
     # Use latest kernel: https://github.com/NixOS/nixpkgs/issues/30335#issuecomment-336031992
     kernelPackages = pkgs.zfs.latestCompatibleLinuxPackages;
