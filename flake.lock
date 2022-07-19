@@ -4,7 +4,7 @@
       "inputs": {
         "devshell": "devshell",
         "flake-utils": "flake-utils",
-        "nixpkgs": "nixpkgs_3"
+        "nixpkgs": "nixpkgs_4"
       },
       "locked": {
         "lastModified": 1633897092,
@@ -123,6 +123,24 @@
         "type": "github"
       }
     },
+    "nixinate": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1654872030,
+        "narHash": "sha256-a1e49vvdEapkG9tbC0WLEemLGXbMR6hEBeW22aGwueQ=",
+        "owner": "matthewcroughan",
+        "repo": "nixinate",
+        "rev": "0f53b4f183fbde2ba2b50d3e7dd910b86ea179ed",
+        "type": "github"
+      },
+      "original": {
+        "owner": "matthewcroughan",
+        "repo": "nixinate",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1638476488,
@@ -155,6 +173,22 @@
     },
     "nixpkgs_2": {
       "locked": {
+        "lastModified": 1653060744,
+        "narHash": "sha256-kfRusllRumpt33J1hPV+CeCCylCXEU7e0gn2/cIM7cY=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "dfd82985c273aac6eced03625f454b334daae2e8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_3": {
+      "locked": {
         "lastModified": 1647297614,
         "narHash": "sha256-ulGq3W5XsrBMU/u5k9d4oPy65pQTkunR4HKKtTq0RwY=",
         "owner": "nixos",
@@ -169,7 +203,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_3": {
+    "nixpkgs_4": {
       "locked": {
         "lastModified": 1631962327,
         "narHash": "sha256-h2fgtNHozEcB42BQ1QVWAJUpQ1FA3gpgq/RrOKAxbfE=",
@@ -185,7 +219,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_4": {
+    "nixpkgs_5": {
       "locked": {
         "lastModified": 1633709683,
         "narHash": "sha256-KVJEToVd6SuUqc2XFIpfSjns07orqEWzIq9AcF/SIf8=",
@@ -204,7 +238,7 @@
     "robotnix": {
       "inputs": {
         "androidPkgs": "androidPkgs",
-        "nixpkgs": "nixpkgs_4",
+        "nixpkgs": "nixpkgs_5",
         "nixpkgsUnstable": "nixpkgsUnstable"
       },
       "locked": {
@@ -225,7 +259,8 @@
       "inputs": {
         "firefox": "firefox",
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs_2",
+        "nixinate": "nixinate",
+        "nixpkgs": "nixpkgs_3",
         "robotnix": "robotnix"
       }
     }

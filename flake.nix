@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:/nixos/nixpkgs/nixos-unstable";
+    nixinate.url = "github:matthewcroughan/nixinate";
     home-manager.url = "github:nix-community/home-manager";
     robotnix.url = "github:danielfullmer/robotnix";
     firefox = {
@@ -11,7 +12,9 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, robotnix, firefox, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, robotnix, firefox, nixinate, ... }@inputs: {
+
+    apps = nixinate.nixinate.x86_64-linux self;
 
     # Applies the function `robotnixSystem` to each of the attributes in the
     # set, for example `hlte`. This means I can have a set of phones to build.
@@ -27,6 +30,11 @@
           (import ./hosts/newtoncrosby/configuration.nix)
           home-manager.nixosModules.home-manager
           {
+            _module.args.nixinate = {
+              host = "newtoncrosby";
+              sshUser = "pasha";
+              buildOn = "remote";
+            };
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.pasha = {
