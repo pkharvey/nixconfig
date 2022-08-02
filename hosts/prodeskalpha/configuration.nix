@@ -10,6 +10,7 @@
     "${inputs.self}/mixins/users/disableMutableUsers.nix"
     "${inputs.self}/mixins/printing.nix"
     "${inputs.self}/mixins/common.nix"
+    "${inputs.self}/mixins/ssh/sk_keys.nix"
   ];
 
   # Use the systemd-boot EFI boot loader.
@@ -17,6 +18,8 @@
     systemd-boot.enable = true;
     efi.canTouchEfiVariables = true;
   };
+
+  services.openssh.enable = true;
 
   networking.hostName = "prodeskalpha";
 

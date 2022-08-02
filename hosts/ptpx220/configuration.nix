@@ -11,6 +11,7 @@
       ./modules/sway.nix
       ./modules/wireless.nix
       ./modules/audio.nix
+      "${inputs.self}/mixins/ssh/sk_keys.nix"
       "${inputs.self}/mixins/editor/nvim.nix"
 #      "${inputs.self}/mixins/printing.nix"
       "${inputs.self}/mixins/avahi.nix"
