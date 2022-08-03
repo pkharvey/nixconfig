@@ -11,6 +11,7 @@
     "${inputs.self}/mixins/printing.nix"
     "${inputs.self}/mixins/common.nix"
     "${inputs.self}/mixins/tailscale.nix"
+    "${inputs.self}/mixins/openssh.nix"
     "${inputs.self}/mixins/ssh/sk_keys.nix"
   ];
 
@@ -19,8 +20,6 @@
     systemd-boot.enable = true;
     efi.canTouchEfiVariables = true;
   };
-
-  services.openssh.enable = true;
 
   networking.hostName = "prodeskalpha";
 
