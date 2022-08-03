@@ -10,6 +10,7 @@
     "${inputs.self}/mixins/users/disableMutableUsers.nix"
     "${inputs.self}/mixins/printing.nix"
     "${inputs.self}/mixins/common.nix"
+    "${inputs.self}/mixins/tailscale.nix"
     "${inputs.self}/mixins/ssh/sk_keys.nix"
   ];
 

@@ -11,6 +11,7 @@
       ./modules/sway.nix
       ./modules/wireless.nix
       ./modules/audio.nix
+      "${inputs.self}/mixins/tailscale.nix"
       "${inputs.self}/mixins/ssh/sk_keys.nix"
       "${inputs.self}/mixins/editor/nvim.nix"
 #      "${inputs.self}/mixins/printing.nix"
@@ -72,8 +73,6 @@
   #   font = "Lat2-Terminus16";
   #   keyMap = "us";
   # };
-
-  services.tailscale.enable = true;
 
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
