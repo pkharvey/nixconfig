@@ -3,6 +3,7 @@
   environment.systemPackages = with pkgs; [
     vim
     git
+    gnumake42
   ];
   nix = {
     package = pkgs.nixUnstable;
