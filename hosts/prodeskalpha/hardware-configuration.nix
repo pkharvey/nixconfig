@@ -29,7 +29,7 @@
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/766C-CA67";
+    { device = "/dev/disk/by-id/nvme-KBG30ZMV256G_TOSHIBA_49APC2S0PZXP-part3";
       fsType = "vfat";
     };
 
