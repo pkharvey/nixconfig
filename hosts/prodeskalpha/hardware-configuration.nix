@@ -28,6 +28,11 @@
       fsType = "zfs";
     };
 
+  fileSystems."/windows" =
+    { device = "zroot/root/windows";
+      fsType = "zfs";
+    };
+
   fileSystems."/boot" =
     { device = "/dev/disk/by-id/nvme-KBG30ZMV256G_TOSHIBA_49APC2S0PZXP-part3";
       fsType = "vfat";

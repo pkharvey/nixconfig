@@ -6,6 +6,8 @@
     "${inputs.self}/mixins/locale.nix"
     "${inputs.self}/mixins/sway"
     "${inputs.self}/mixins/audio.nix"
+    "${inputs.self}/mixins/intel_vm.nix"
+    "${inputs.self}/mixins/libvirtd.nix"
     "${inputs.self}/mixins/users/pasha.nix"
     "${inputs.self}/mixins/users/disableMutableUsers.nix"
     "${inputs.self}/mixins/printing.nix"
