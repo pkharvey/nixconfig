@@ -3,6 +3,7 @@
   imports = [
     ./hardware-configuration.nix
     ./zfs-requirements.nix
+    "${inputs.self}/mixins/bash.nix"
     "${inputs.self}/mixins/locale.nix"
     "${inputs.self}/mixins/sway"
     "${inputs.self}/mixins/audio.nix"
