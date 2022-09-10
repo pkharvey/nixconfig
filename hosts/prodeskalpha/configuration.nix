@@ -6,6 +6,7 @@
     "${inputs.self}/mixins/bash.nix"
     "${inputs.self}/mixins/locale.nix"
     "${inputs.self}/mixins/sway"
+    "${inputs.self}/mixins/gammastep.nix"
     "${inputs.self}/mixins/audio.nix"
     "${inputs.self}/mixins/intel_vm.nix"
     "${inputs.self}/mixins/libvirtd.nix"
