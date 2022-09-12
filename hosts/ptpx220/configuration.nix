@@ -75,7 +75,7 @@
   environment.systemPackages = with pkgs; [
     wpa_supplicant_gui
     wget
-    inputs.firefox.defaultPackage.${pkgs.hostPlatform.system}
+    inputs.firefox.packages.${pkgs.hostPlatform.system}.firefox-nightly-bin
     foot
     element-desktop
   ];
