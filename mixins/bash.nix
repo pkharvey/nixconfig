@@ -4,6 +4,10 @@
     shellAliases = {
       gitroot="cd $(git rev-parse --show-toplevel || pwd)";
       g="git";
+      gd="git diff";
+      gl="git log --oneline --decorate --graph --all";
+      gll="git log";
+      s="git status";
       n="nix-shell -p";
       r="nix repl";
       ssh = "env TERM=xterm-256color ssh";

@@ -13,6 +13,7 @@
       "${inputs.self}/mixins/users/pasha.nix"
       "${inputs.self}/mixins/users/disableMutableUsers.nix"
       "${inputs.self}/mixins/audio.nix"
+      "${inputs.self}/mixins/bash.nix"
       "${inputs.self}/mixins/locale.nix"
       "${inputs.self}/mixins/tailscale.nix"
       "${inputs.self}/mixins/openssh.nix"
