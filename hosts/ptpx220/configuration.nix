@@ -79,6 +79,9 @@
     inputs.firefox.packages.${pkgs.hostPlatform.system}.firefox-nightly-bin
     foot
     element-desktop
+    picocom
+    tmux
+    screen
   ];
 
   # For mounting Android MTP devices
