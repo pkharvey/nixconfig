@@ -26,6 +26,29 @@
               command mkdir "$@" && builtin cd "$@"
       }
       
+      unalias mml >/dev/null 2>&1
+      mml()
+      {
+              if [[ $# -eq "2" ]] && [[ -O "$1" ]] &&
+                 { [[ ! -e "$2" ]] || { [[ -O "$2" ]] && [[ -d "$2" ]]; }; }
+              then
+                if [[ ! -e "$2" ]]
+                then
+                  command mkdir -p "$2"
+                fi
+
+                if [[ -O "$2" ]] && [[ -d "$2" ]]
+                then
+                  command mv -i "$1" "$2" &&
+                  command ln -s "$2"/"$1" .
+                fi
+              else
+                echo "mkdir and move into destination dir then symlink to"
+                echo "if <destination> dir doesn't exist, it will be created"
+                echo "Usage: mml <source> <destination>"
+              fi
+      }
+
       unalias nt >/dev/null 2>&1
       nt()
       {
