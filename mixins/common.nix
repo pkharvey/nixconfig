@@ -14,7 +14,7 @@
         flake-registry = ${empty_registry}
         builders-use-substitutes = true
       '';
-    trustedUsers = [ "@wheel" "root" ];
+    settings.trusted-users = [ "@wheel" "root" ];
     registry.nixpkgs.flake = inputs.nixpkgs;
     nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
   };
