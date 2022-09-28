@@ -8,13 +8,13 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./modules/sway.nix
       ./modules/wireless.nix
       "${inputs.self}/mixins/users/pasha.nix"
       "${inputs.self}/mixins/users/disableMutableUsers.nix"
-      "${inputs.self}/mixins/audio.nix"
       "${inputs.self}/mixins/bash.nix"
       "${inputs.self}/mixins/locale.nix"
+      "${inputs.self}/mixins/sway"
+      "${inputs.self}/mixins/audio.nix"
       "${inputs.self}/mixins/tailscale.nix"
       "${inputs.self}/mixins/openssh.nix"
       "${inputs.self}/mixins/ssh/sk_keys.nix"
