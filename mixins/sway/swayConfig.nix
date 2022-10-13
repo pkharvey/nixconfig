@@ -50,6 +50,9 @@ in
 #      '';
       enable = true;
       config = rec {
+        startup = [
+          { always = true; command = "${pkgs.mako}/bin/mako --default-timeout 3000"; }
+        ];
         keybindings = lib.mkOptionDefault {
           "${modifier}+F10" = "exec ${pkgs.firefox}/bin/firefox";
           "${modifier}+F11" = "exec ${switchToRussian}";
