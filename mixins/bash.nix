@@ -2,7 +2,7 @@
 {
   programs.bash = {
     shellAliases = {
-      gitroot="cd $(git rev-parse --show-toplevel || pwd)";
+      gr="cd $(git rev-parse --show-toplevel || pwd)";
       g="git";
       gd="git diff";
       gl="git log --oneline --decorate --graph --all";
