@@ -19,6 +19,7 @@
 
       vlc
       youtube-dl
+      wget
       ffmpeg
       mpv
 
@@ -28,13 +29,19 @@
       iotop
       sysstat
 
+      magic-wormhole
       man-pages
       tree
       file
       lsof
       psmisc
+      zip
       unzip
       ripgrep
+      fd
+      hyperfine
+
+      picocom
 
       atom
     ];
