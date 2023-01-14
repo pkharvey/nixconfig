@@ -20,6 +20,8 @@
     "${inputs.self}/mixins/ssh/sk_keys.nix"
   ];
 
+  virtualisation.docker.enable = true;
+
   # Use the systemd-boot EFI boot loader.
   boot.loader = {
     systemd-boot.enable = true;

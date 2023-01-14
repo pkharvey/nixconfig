@@ -7,6 +7,7 @@
     extraGroups = [
       "wheel"
       "dialout"
+      "docker"
     ];
     openssh.authorizedKeys.keys = [
       "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIApZlVXP4T+TMUbLhduKIA4yF8vmJY1Boi+Hoh0mC20mAAAABHNzaDo=" # backup key
