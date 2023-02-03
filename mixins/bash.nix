@@ -23,7 +23,7 @@
       unalias mcd >/dev/null 2>&1
       mcd()
       {
-              command mkdir "$@" && builtin cd "$@"
+              command mkdir -p "$@" && builtin cd "$@"
       }
       
       unalias mml >/dev/null 2>&1
