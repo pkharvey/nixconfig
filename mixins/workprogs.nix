@@ -9,6 +9,7 @@
 
       element-desktop
 
+      logseq
       leafpad
       free42
       feh
