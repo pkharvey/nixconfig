@@ -9,21 +9,27 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./modules/wireless.nix
-      "${inputs.self}/mixins/users/pasha.nix"
-      "${inputs.self}/mixins/users/disableMutableUsers.nix"
       "${inputs.self}/mixins/bash.nix"
       "${inputs.self}/mixins/locale.nix"
       "${inputs.self}/mixins/sway"
-      "${inputs.self}/mixins/audio.nix"
-      "${inputs.self}/mixins/tailscale.nix"
-      "${inputs.self}/mixins/openssh.nix"
-      "${inputs.self}/mixins/ssh/sk_keys.nix"
+      "${inputs.self}/mixins/gammastep.nix"
+      "${inputs.self}/mixins/workprogs.nix"
       "${inputs.self}/mixins/editor/nvim.nix"
+      "${inputs.self}/mixins/audio.nix"
+      "${inputs.self}/mixins/users/pasha.nix"
+      "${inputs.self}/mixins/users/disableMutableUsers.nix"
 #      "${inputs.self}/mixins/printing.nix"
       "${inputs.self}/mixins/avahi.nix"
       "${inputs.self}/mixins/common.nix"
+      "${inputs.self}/mixins/tailscale.nix"
+      "${inputs.self}/mixins/openssh.nix"
+      "${inputs.self}/mixins/ssh/sk_keys.nix"
+      "${inputs.self}/mixins/nrfjprog-udev.nix"
+      "${inputs.self}/mixins/dslogic-udev.nix"
       # ./modules/ups.nix
     ];
+
+  virtualisation.docker.enable = true;
 
   boot = {
     # Use latest kernel: https://github.com/NixOS/nixpkgs/issues/30335#issuecomment-336031992
