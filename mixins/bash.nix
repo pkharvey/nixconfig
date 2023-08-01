@@ -4,8 +4,12 @@
     shellAliases = {
       gr="cd $(git rev-parse --show-toplevel || pwd)";
       g="git";
+      ga="git add";
       gd="git diff";
+      gdc="git diff --cached";
+      gb="git branch";
       gl="git log --oneline --decorate --graph --all";
+      glb="git log --graph --simplify-by-decoration --pretty=format:'%d' --all";
       gll="git log";
       s="git status";
       n="nix-shell -p";
@@ -19,13 +23,13 @@
               builtin history -c
               builtin exit
       }
-      
+
       unalias mcd >/dev/null 2>&1
       mcd()
       {
               command mkdir -p "$@" && builtin cd "$@"
       }
-      
+
       unalias mml >/dev/null 2>&1
       mml()
       {
@@ -56,25 +60,25 @@
               [[ $# -eq 0 ]] && args='about:newtab'
               command ${pkgs.firefox}/bin/firefox --new-tab --url "$args"
       }
-      
+
       unalias ws >/dev/null 2>&1
       ws()
       {
               command swaymsg workspace "$@"
       }
-      
+
       unalias xtitle >/dev/null 2>&1
       xtitle()
       {
               command echo -ne "\033]0;$@\007"
       }
-      
+
       unalias ifok >/dev/null 2>&1
       ifok()
       {
               [[ $? -eq 0 ]] && "$@"
       }
-      
+
       unalias ifnok >/dev/null 2>&1
       ifnok()
       {
