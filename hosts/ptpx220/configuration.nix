@@ -18,7 +18,7 @@
       "${inputs.self}/mixins/audio.nix"
       "${inputs.self}/mixins/users/pasha.nix"
       "${inputs.self}/mixins/users/disableMutableUsers.nix"
-#      "${inputs.self}/mixins/printing.nix"
+      "${inputs.self}/mixins/printing.nix"
       "${inputs.self}/mixins/avahi.nix"
       "${inputs.self}/mixins/common.nix"
       "${inputs.self}/mixins/tailscale.nix"
