@@ -1,11 +1,52 @@
 { config, pkgs, lib, inputs, ...}:
 {
   environment.systemPackages = with pkgs; [
-    vim
+    
+    signal-desktop 
+    kitty
+    gamemode
+    gamescope
+    tldr
+    autojump  
+    thefuck
+    ffmpeg
+    vlc
+    telegram-desktop
+    microsoft-edge
+    protonup-qt
+    lutris     
+    mangohud
+    gimp
     git
-    gnumake42
+    spotify
   ];
+  fonts.packages = with pkgs; [
+  #fonts
+  font-awesome
+  font-awesome_5
+  font-awesome_4
+  nerdfonts
+  terminus-nerdfont
+  inconsolata-nerdfont
+  nerdfix
+  fira-code
+  fira-code-symbols
+  ];
+  
+
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+
+  
+
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  services.flatpak.enable = true;
+  # Bootloader.
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+ 
   nix = {
+ 
     package = pkgs.nixUnstable;
     extraOptions =
       let empty_registry = builtins.toFile "empty-flake-registry.json" ''{"flakes":[],"version":2}''; in
