@@ -20,7 +20,7 @@
     git
     spotify
   ];
-  fonts.packages = with pkgs; [
+fonts.fonts = with pkgs; [
   #fonts
   font-awesome
   font-awesome_5
@@ -36,10 +36,6 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  
-
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   services.flatpak.enable = true;
   # Bootloader.
   boot.loader.systemd-boot.enable = true;

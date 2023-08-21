@@ -8,7 +8,6 @@
   };
 
   outputs = { self, nixpkgs, home-manager, nixos-hardware, ... }@inputs: {
-    };
 
     nixosConfigurations = {
       aws = nixpkgs.lib.nixosSystem {    # this is the hostname = some func
@@ -18,9 +17,6 @@
           home-manager.nixosModules.home-manager
           nixos-hardware.nixosModules.common-cpu-intel
           {
-            _module.args.nixinate = {
-              host = "aws";
-            };
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.aws= {
@@ -32,5 +28,6 @@
         ];
         specialArgs = { inherit inputs; };
       };
+   };
+};
 }
-

@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, lib, pkgs, modulesPath, ... }:
+{ config, inputs, lib, pkgs, modulesPath, ... }:
 
 {
   imports =
@@ -12,7 +12,12 @@
       (modulesPath + "/programs/autojump.nix")
       (modulesPath + "/programs/gamemode.nix")
       (modulesPath + "/programs/gamescope.nix")
+      "${inputs.self}/mixins/locale.nix"
+      "${inputs.self}/mixins/common.nix"
+    #  "${inputs.self}/mixins/thunar.nix"
+      "${inputs.self}/mixins/audio.nix"
      ];
+
  
 
   programs.noisetorch.enable = true;
