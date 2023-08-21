@@ -18,7 +18,6 @@
   programs.noisetorch.enable = true;
   
   networking.hostName = "aws"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
   # 
@@ -50,24 +49,6 @@
     })
   ];
 
-  # Set your time zone.
-  time.timeZone = "Europe/Berlin";
- 
-
- # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "de_DE.UTF-8";
-    LC_IDENTIFICATION = "de_DE.UTF-8";
-    LC_MEASUREMENT = "de_DE.UTF-8";
-    LC_MONETARY = "de_DE.UTF-8";
-    LC_NAME = "de_DE.UTF-8";
-    LC_NUMERIC = "de_DE.UTF-8";
-    LC_PAPER = "de_DE.UTF-8";
-    LC_TELEPHONE = "de_DE.UTF-8";
-    LC_TIME = "de_DE.UTF-8";
-  };
 
   # Enable Environment.
   services.xserver = {
@@ -156,18 +137,15 @@
   wine
   wine64
   winetricks
-  unrar
   discord-canary
   slurp
   grim
-  qogir-theme
   noisetorch
   wtype
   wl-clipboard
   firefox
   lxappearance
   xfce.thunar
-  xarchiver
   wlr-randr
   cadence
   qjackctl
