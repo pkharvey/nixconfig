@@ -14,7 +14,7 @@
       (modulesPath + "/programs/gamescope.nix")
       "${inputs.self}/mixins/locale.nix"
       "${inputs.self}/mixins/common.nix"
-    #  "${inputs.self}/mixins/thunar.nix"
+      "${inputs.self}/mixins/thunar.nix"
       "${inputs.self}/mixins/audio.nix"
      ];
 
@@ -57,8 +57,8 @@
 
   # Enable Environment.
   services.xserver = {
-#       enable = true;
-#       desktopManager.gnome.enable = true;
+       enable = true;
+      # desktopManager.gnome.enable = true;
         displayManager.gdm = {
                enable = true;
                wayland = true;
@@ -75,12 +75,6 @@
 
  
  
-  # Configure keymap in X11
-  services.xserver = {
-    layout = "us";
-    xkbVariant = "";
-  };
-
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -150,7 +144,6 @@
   wl-clipboard
   firefox
   lxappearance
-  xfce.thunar
   wlr-randr
   cadence
   qjackctl

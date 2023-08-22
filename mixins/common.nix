@@ -20,7 +20,7 @@
     git
     spotify
   ];
-fonts.fonts = with pkgs; [
+fonts.packages= with pkgs; [
   #fonts
   font-awesome
   font-awesome_5
