@@ -39,6 +39,7 @@
   };
  
   boot.supportedFilesystems = [ "ntfs" ];
+  boot.kernelModules = [ "v4l2loopback" ];
 
  #waybar fix
    nixpkgs.overlays = [
@@ -93,6 +94,7 @@
   environment.systemPackages = with pkgs; [
   (callPackage ../../pkgs/xwaylandvideobridge.nix { })
   xorg.xhost
+  linuxPackages.v4l2loopback
   discord-canary
   way-displays
   ventoy-full
