@@ -1,13 +1,15 @@
 {
-  description = "A NixOS flake for pkharvey's personal computer.";
+  description = "A NixOS flake for Aws.";
 
   inputs = {
+    
     nixos-hardware.url = "github:nixos/nixos-hardware";
     nixpkgs.url = "github:/nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
+    gbar.url = "github:scorpion-26/gBar";
   };
 
-  outputs = { self, nixpkgs, home-manager, nixos-hardware, ... }@inputs: {
+  outputs = { self ,gbar , nixpkgs, home-manager, nixos-hardware, ... }@inputs: {
 
     nixosConfigurations = {
       aws = nixpkgs.lib.nixosSystem {    # this is the hostname = some func

@@ -11,6 +11,8 @@
     thefuck
     ffmpeg
     vlc
+    mpv
+    syncplay
     telegram-desktop
     microsoft-edge
     protonup-qt

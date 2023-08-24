@@ -1,8 +1,4 @@
-# Edit thi9;9u configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, inputs, lib, pkgs, modulesPath, ... }:
+{gbar, config, inputs, lib, pkgs, modulesPath, ... }:
 
 {
   imports =
@@ -12,15 +8,14 @@
       (modulesPath + "/programs/autojump.nix")
       (modulesPath + "/programs/gamemode.nix")
       (modulesPath + "/programs/gamescope.nix")
+      "${inputs.self}/mixins/pipewire.nix"
       "${inputs.self}/mixins/locale.nix"
       "${inputs.self}/mixins/common.nix"
       "${inputs.self}/mixins/thunar.nix"
-      "${inputs.self}/mixins/audio.nix"
      ];
 
  
 
-  programs.noisetorch.enable = true;
   
   networking.hostName = "aws"; # Define your hostname.
 
@@ -96,9 +91,12 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+  (callPackage ../../pkgs/xwaylandvideobridge.nix { })
   xorg.xhost
+  discord-canary
   way-displays
   ventoy-full
+  xdg-desktop-portal-hyprland
   vulkan-tools
   polkit_gnome
   gparted
@@ -108,7 +106,7 @@
   neovim
   git
   oh-my-fish
-  pavucontrol
+  inputs.gbar.defaultPackage.x86_64-linux
   #hypr assets : 
   mako
   (wrapOBS {
@@ -127,7 +125,6 @@
   waybar
   libsForQt5.qt5.qtwayland
   qt6.qtwayland
-  wireplumber
   flatpak
   gnome.gnome-software
   cliphist
@@ -136,18 +133,13 @@
   wine
   wine64
   winetricks
-  discord-canary
   slurp
   grim
-  noisetorch
   wtype
   wl-clipboard
   firefox
   lxappearance
   wlr-randr
-  cadence
-  qjackctl
-  helvum
   ];
  
   # This value determines the NixOS release from which the default
