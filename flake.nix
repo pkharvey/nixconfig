@@ -6,10 +6,9 @@
     nixos-hardware.url = "github:nixos/nixos-hardware";
     nixpkgs.url = "github:/nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
-    gbar.url = "github:scorpion-26/gBar";
   };
 
-  outputs = { self ,gbar , nixpkgs, home-manager, nixos-hardware, ... }@inputs: {
+  outputs = { self , nixpkgs, home-manager, nixos-hardware, ... }@inputs: {
 
     nixosConfigurations = {
       aws = nixpkgs.lib.nixosSystem {    # this is the hostname = some func

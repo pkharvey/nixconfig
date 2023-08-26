@@ -1,4 +1,4 @@
-{gbar, config, inputs, lib, pkgs, modulesPath, ... }:
+{config, inputs, lib, pkgs, modulesPath, ... }:
 
 {
   imports =
@@ -110,7 +110,6 @@
   neovim
   git
   oh-my-fish
-  inputs.gbar.defaultPackage.x86_64-linux
   #hypr assets : 
   mako
   (wrapOBS {
@@ -123,6 +122,7 @@
   v4l-utils
   linuxPackages.v4l2loopback
   bemenu
+  gh
   connman-gtk
   linux-wifi-hotspot
   blueberry
