@@ -39,7 +39,6 @@
   };
  
   boot.supportedFilesystems = [ "ntfs" ];
-  boot.kernelModules = [ "v4l2loopback" ];
 
  #waybar fix
    nixpkgs.overlays = [
@@ -68,7 +67,8 @@
 	# Vulkan
 	driSupport = true;
   };
-
+  boot.kernelModules = [ "v4l2loopback" ];
+  boot.extraModulePackages = [ pkgs.linuxPackages.v4l2loopback ];
  
  
   # Enable CUPS to print documents.
@@ -92,9 +92,11 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  (callPackage ../../pkgs/xwaylandvideobridge.nix { })
+  (libsForQt5.callPackage ../../pkgs/xwaylandvideobridge.nix { })
   xorg.xhost
-  linuxPackages.v4l2loopback
+  gnome.file-roller
+  cinnamon.nemo-with-extensions
+  cinnamon.nemo-fileroller
   discord-canary
   way-displays
   ventoy-full
@@ -119,8 +121,10 @@
       ];
     })
   v4l-utils
+  linuxPackages.v4l2loopback
   bemenu
   connman-gtk
+  linux-wifi-hotspot
   blueberry
   wpa_supplicant
   swww
@@ -128,6 +132,7 @@
   libsForQt5.qt5.qtwayland
   qt6.qtwayland
   flatpak
+  flatpak-builder
   gnome.gnome-software
   cliphist
   fzf

@@ -4,6 +4,7 @@
 , pkg-config
 , extra-cmake-modules
 , qt5
+, wrapQtAppsHook
 , libsForQt5
 , fetchpatch
 }: stdenv.mkDerivation rec {
@@ -22,6 +23,7 @@
     cmake
     extra-cmake-modules
     pkg-config
+    wrapQtAppsHook
   ];
 
   buildInputs = [
@@ -49,5 +51,5 @@
     })
   ];
 
-  dontWrapQtApps = true;
+  dontWrapQtApps = false;
 }
