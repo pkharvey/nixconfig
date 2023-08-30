@@ -41,13 +41,13 @@
   boot.supportedFilesystems = [ "ntfs" ];
 
  #waybar fix
-   nixpkgs.overlays = [
-    (self: super: {
-      waybar = super.waybar.overrideAttrs (oldAttrs: {
-        mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-      });
-    })
-  ];
+#   nixpkgs.overlays = [
+#    (self: super: {
+#      waybar = super.waybar.overrideAttrs (oldAttrs: {
+#        mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+#     });
+#    })
+#  ];
 
 
   # Enable Environment.
@@ -78,8 +78,6 @@
 
   # services.xserver.libinput.enable = true;
   programs.fish.enable = true;
- 
-
  # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.aws = {
     isNormalUser = true;
@@ -110,12 +108,15 @@
   neovim
   git
   oh-my-fish
+  waybar
   #hypr assets : 
   mako
   (wrapOBS {
       plugins = with obs-studio-plugins; [
         obs-backgroundremoval
+	obs-vaapi
         wlrobs
+	obs-gstreamer
         obs-vkcapture
       ];
     })
@@ -128,7 +129,6 @@
   blueberry
   wpa_supplicant
   swww
-  waybar
   libsForQt5.qt5.qtwayland
   qt6.qtwayland
   flatpak
