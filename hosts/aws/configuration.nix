@@ -90,7 +90,6 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  (libsForQt5.callPackage ../../pkgs/xwaylandvideobridge.nix { })
   xorg.xhost
   gnome.file-roller
   cinnamon.nemo-with-extensions
