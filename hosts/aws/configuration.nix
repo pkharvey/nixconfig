@@ -77,6 +77,7 @@
    
 
   # services.xserver.libinput.enable = true;
+  
   programs.fish.enable = true;
  # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.aws = {
@@ -139,8 +140,7 @@
   wine
   wine64
   winetricks
-  slurp
-  grim
+  inputs.hyprland-contrib.packages.${pkgs.system}.grimblast 
   wtype
   wl-clipboard
   firefox
