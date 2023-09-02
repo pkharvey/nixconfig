@@ -12,6 +12,7 @@
       glb="git log --graph --simplify-by-decoration --pretty=format:'%d' --all";
       gll="git log";
       s="git status";
+      shlvl="echo $SHLVL";
       n="nix-shell -p";
       r="nix repl";
       ssh = "env TERM=xterm-256color ssh";
