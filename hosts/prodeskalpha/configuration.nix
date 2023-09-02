@@ -33,6 +33,7 @@
 
   networking.hostName = "prodeskalpha";
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+  boot.tmp.useTmpfs = true;
 
   system.stateVersion = "22.05";
 }
