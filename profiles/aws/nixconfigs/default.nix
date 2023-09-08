@@ -1,0 +1,4 @@
+{inputs, outputs, ... }:
+{
+imports = [./zsh ];
+}

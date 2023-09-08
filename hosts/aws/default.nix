@@ -35,25 +35,23 @@
   }; 
   networking.hostName = "aws"; # Define your hostname.
 
-  # Configure network proxy if necessary
-  # 
-  #networking.proxy.default = "http://user:password@proxy:port/";
    networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-  # Enable networking
+
   #networking.networkmanager.enable = true;
   services.connman={enable=true; wifi.backend="wpa_supplicant";};
   hardware.bluetooth.enable = true;
   
   
 
-  #enable steam
   programs.steam = {
   enable = true;
   remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
   dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
   };
-  # Enable Environment.
+
+
+
   services.xserver = {
        enable = true;
       # desktopManager.gnome.enable = true;
@@ -65,6 +63,9 @@
   programs.hyprland.enable = true;
 
 
+
+
+
   hardware.opengl = {
 	# Mesa
 	enable = true;
@@ -72,6 +73,9 @@
 	# Vulkan
 	driSupport = true;
   };
+
+
+
   boot = {
     extraModulePackages = [ pkgs.linuxPackages.v4l2loopback ];
     kernelModules = [ "v4l2loopback" ];
@@ -81,11 +85,9 @@
   };
  
  
-  # Enable CUPS to print documents.
   services.printing.enable = true;
 
   
-  programs.fish.enable = true;
 
   users.users.aws = {
     isNormalUser = true;
@@ -93,7 +95,6 @@
     extraGroups = ["wheel" ];
     packages = with pkgs; [
     ];
-   shell=pkgs.fish;
   };
 
   environment.systemPackages = with pkgs; [

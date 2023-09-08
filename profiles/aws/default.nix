@@ -1,5 +1,10 @@
 { inputs, outputs, lib, config, pkgs, ... }:
 {
+  imports = [
+  ./nixconfigs
+  ./configs
+  ];
+
   home.packages = with pkgs; [
     xorg.xhost
     signal-desktop 
@@ -36,7 +41,6 @@
     lzip
     neovim
     git
-    oh-my-fish
     waybar
     #sound :
     pavucontrol
@@ -85,17 +89,12 @@
   ];
 
 
-  xdg.configFile = {
-    hypr.source = ./configs/hypr;
-    kitty.source = ./configs/kitty;
-    fish.source = ./configs/fish;
-    omf.source = ./configs/omf;
-    waybar.source = ./configs/waybar;
-    MangoHud.source = ./configs/MangoHud;
-  };
+  
 
   nixpkgs.config.allowUnfree = true;
     
+  
+
   programs.git.enable = true;
   programs.home-manager.enable = true;
   home.username = "aws";
