@@ -89,13 +89,15 @@
   fira-code
   fira-code-symbols
   ];
-
-
+  
   
 
   nixpkgs.config.allowUnfree = true;
     
-  
+  # MODULES
+
+  nix-colors.homeManagerModules.default;
+  hyprland.homeManagerModules.default;
 
   programs.git.enable = true;
   programs.home-manager.enable = true;

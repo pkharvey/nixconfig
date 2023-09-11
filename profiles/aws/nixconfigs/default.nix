@@ -1,4 +1,7 @@
 {config, pkgs, lib ,inputs, outputs, ... }:
 {
-imports = [./zsh ];
+imports = [
+	./zsh
+	./hypr
+ ];
 }
