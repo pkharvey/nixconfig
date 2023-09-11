@@ -87,9 +87,9 @@
  
   services.printing.enable = true;
 
-  
-
+  programs.zsh.enable = true; 
   users.users.aws = {
+    shell = pkgs.zsh;
     isNormalUser = true;
     description = "aws abdulrahman";
     extraGroups = ["wheel" ];

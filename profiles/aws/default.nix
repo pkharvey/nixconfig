@@ -6,6 +6,8 @@
   ];
 
   home.packages = with pkgs; [
+    android-tools
+    zsh
     xorg.xhost
     signal-desktop 
     kitty
