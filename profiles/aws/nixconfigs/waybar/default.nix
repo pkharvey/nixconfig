@@ -1,252 +1,429 @@
 {config, inputs, outputs, lib, pkgs, ...}:
 { 
+ home.file.".config/waybar" = {
+    source = ./waybar;
+    recursive = true;
+ };
  programs.waybar = {
+    enable = true;
     settings =[
+	  {
+	    "position"= "top";
+	    "layer"= "top";
+	    "height"= 16 ;
+	    "margin-top"= 0;
+	    "margin-bottom"= 0;
+	    "margin-left"= 0;
+	    "margin-right"= 0;
+	    modules-left= ["custom/launcher" "hyprland/workspaces" "custom/playerctl" "custom/playerlabel"];
+	    modules-center= ["cpu" "memory" "disk"];
+	    modules-right= ["tray" "custom/randwall" "network" "pulseaudio" "clock"];
 	
-	{
-	    "layer": "top",
-	    "position": "top",
-	    "height": 15,
 	
-	    "modules-left": ["hyprland/workspaces"],
-	    "modules-center": ["clock"],
-	    "modules-right": ["tray", "custom/spotify", "pulseaudio", "network", "idle_inhibitor"],
-	   
-	   
-	    "clock": {
-	        "format": "{:%H:%M}",
-	        "tooltip": false
-	    },
-	    "battery": {
-	        "format": "{capacity}% {icon}",
-	        "format-alt": "{time} {icon}",
-	        "format-icons": ["", "", "", "", ""],
-	        "format-charging": "{capacity}% ",
-	        "interval": 30,
-	        "states": {
-	            "warning": 25,
-	            "critical": 10
-	        },
-	        "tooltip": false
-	    },
-	    "network": {
-	        "format-wifi": "{ipaddr} {essid} ({signalStrength}%) {icon}",
-	  	"format-ethernet": "{ipaddr}  {ifname} {icon}",
-	        "format-alt": "{icon}",
-	        "format-alt-click": "click-right",
-		"format-icons": {
-	            "wifi": [""],
-	            "ethernet": [""],
-	            "disconnected": ["X"]
-	        },
-	        "on-click": "",
-	    "tooltip": false
-	    },
-	    "pulseaudio": {
-	        "format-alt": "{icon}",
-	        "format": "{volume}% {icon}",
-	        "format-alt-click": "click-right",
-	        "format-muted": "",
-	        "format-icons": {
-	            "phone": [" ", " ", " "],
-	            "default": ["", "", ""]
-	        },
-	        "scroll-step": 10,
-	        "on-click": "pavucontrol",
-	        "tooltip": false
-	    },
-	    "custom/spotify": {
-	        "interval": 1,
-	        "return-type": "json",
-	        "exec": "~/.config/waybar/modules/spotify.sh",
-	        "exec-if": "pgrep spotify",
-	        "escape": true
-	    },
-	    "custom/storage": {
-	        "format": "{} ",
-	        "format-alt": "{percentage}% ",
-	        "format-alt-click": "click-right",
-	        "return-type": "json",
-	        "interval": 60,
-	        "exec": "~/.config/waybar/modules/storage.sh"
-	    },
-	    "backlight": {
-	        "format": "{icon}",
-	        "format-alt": "{percent}% {icon}",
-	        "format-alt-click": "click-right",
-	        "format-icons": ["", ""],
-	        "on-scroll-down": "light -A 1",
-	        "on-scroll-up": "light -U 1"
-	    },
-	    "custom/weather": {
-	        "format": "{}",
-	        "format-alt": "{alt}: {}",
-	        "format-alt-click": "click-right",
-	        "interval": 1800,
-	        "return-type": "json",
-	        "exec": "~/.config/waybar/modules/weather.sh",
-	        "exec-if": "ping wttr.in -c1"
-	    },
-	    "idle_inhibitor": {
-	        "format": "{icon}",
-	        "format-icons": {
-	            "activated": "",
-	            "deactivated": ""
-	        },
-	        "tooltip": false
-	    },
-	    "custom/mail": {
-	        "format": "",
-	        "format-alt": "{alt} ",
-	        "format-alt-click": "click-right",
-	        "interval": 60,
-	        "return-type": "json",
-	        "exec": "~/.config/waybar/modules/mail.py",
-	        "tooltip": false
-	    },
-	    "custom/test": {
-	        "format": "{}",
-	        "exec": "/tmp/test blub",
-	        "param": "blah",
-	        "interval": 5
-	    },
-	    "tray": {
-	        "icon-size": 18
-	    }
-	}
-
-
+	
+	    "clock"= {
+			"format"= " {:%H:%M}";
+			"tooltip"= "true";
+	        	"tooltip-format"= "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
+	        	"format-alt"= " {:%d/%m}";
+	     };
+		
+	
+		"hyprland/workspaces"= {
+	        "active-only"= false;
+	        "all-outputs"= true;
+	        "disable-scroll"= false;
+	        "on-scroll-up"= "hyprctl dispatch workspace -1";
+	        "on-scroll-down"= "hyprctl dispatch workspace +1";
+		
+		"format"= "{icon}";
+		"on-click"= "activate";
+		"format-icons"= {
+	#			"1"= "一";
+	#			"2"= "二";
+	#			"3"= "三";
+	#			"4"= "四";
+	#			"5"= "五";
+				"urgent"= "";
+				"active"= "";
+				"default"= "󰧞";
+	   		        "sort-by-number"= true;
+	    };
+	    };
+	
+	    "custom/playerctl"= {
+	      "format"= "{icon}";
+	      "return-type"= "json";
+	      "max-length"= 64;
+	      "exec"= "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\" \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F";
+	      "on-click-middle"= "playerctl play-pause";
+	      "on-click"= "playerctl previous";
+	      "on-click-right"= "playerctl next";
+	      "format-icons"= {
+	        "Playing"= "<span foreground='#E5B9C6'>󰒮 󰐌 󰒭</span>";
+	        "Paused"= "<span foreground='#928374'>󰒮 󰏥 󰒭</span>";
+	      };
+	    };
+	    "custom/playerlabel"= {
+	      "format"= "<span>{}</span>";
+	      "return-type"= "json";
+	      "max-length"= 48;
+	      "exec"= "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\" \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F";
+	      "on-click-middle"= "playerctl play-pause";
+	      "on-click"= "playerctl previous";
+	      "on-click-right"= "playerctl next";
+	      "format-icons"= {
+	        "Playing"= "<span foreground='#E5B9C6'>󰒮 󰐌 󰒭</span>";
+	        "Paused"= "<span foreground='#928374'>󰒮 󰏥 󰒭</span>";
+	      };
+	    };
+	
+		#"battery"= {
+	        #"states"= {
+	        #    "good"= 95;
+	        #    "warning"= 30;
+	        #    "critical"= 15;
+	        #};
+	        #"format"="{icon}  {capacity}%";
+	        #"format-charging"= "{capacity}% ";
+	        #"format-plugged"= "{capacity}% ";
+	        #"format-alt"= "{icon} {time}";
+	        ##"format-good"= "" // An empty format will hide the module;
+	        ##"format-full"= "";
+	        #"format-icons"= ["" "", "", "", ""];
+		#};
+	
+	  "memory"= {
+	    "format"= "󰍛 {}%";
+	    "format-alt"= "󰍛 {used}/{total} GiB";
+	    "interval"= 5;
+	  };
+	
+	  "cpu"= {
+	    "format"= "󰻠 {usage}%";
+	    "format-alt"= "󰻠 {avg_frequency} GHz";
+	    "interval"= 5;
+	  };
+	
+	  "disk"= {
+	    "format"= "󰋊 {}%";
+	    "format-alt"= "󰋊 {used}/{total} GiB";
+	    "interval"= 5;
+	    "path"= "/mnt/Datos";
+	  };
+		
+		"network"= {
+	        	"format-wifi"= "󰤨";
+	        	"format-ethernet"= " {ifname}: Aesthetic";
+	        	"format-linked"= " {ifname} (No IP)";
+	        	"format-disconnected"= "󰤭";
+	        	"format-alt"= " {ifname}: {ipaddr}/{cidr}";
+	          "tooltip-format"= "{essid}";
+	          "on-click-right"= "nm-connection-editor";
+		};
+	
+		"tray"= {
+			"icon-size"= 16;
+			"spacing"= 5;
+		};
+	
+		"backlight"= {
+	        # "device"= "acpi_video1";
+		"format"= "{icon} {percent}%";
+	        "format-icons"= ["" "" "" "" "" "" "" "" ""];
+	      #	"on-scroll-up"=;
+	      #	"on-scroll-down"=;
+		};
+	
+		"pulseaudio"= {
+			"format"= "{icon} {volume}%";
+	        	"format-muted"= "󰝟";
+			"format-icons"= {
+				"default"= ["󰕿" "󰖀" "󰕾"];
+			};
+			"on-click"= "sh ~/.scripts/volume mute";
+	    "on-scroll-up"= "sh ~/.scripts/volume up";
+	    "on-scroll-down"= "sh ~/.scripts/volume down";
+	    "scroll-step"= 5;
+			"on-click-right"= "pavucontrol";
+	  };
+	  "custom/randwall"= {
+	    "format"= "󰏘";
+	    "on-click"= "sh $HOME/.config/hypr/randwall.sh";
+	    "on-click-right"= "sh $HOME/.config/hypr/wall.sh";
+	  };
+	  "custom/launcher"= {
+	    "format"= "󰈸";
+	    "on-click"= "sh $HOME/.config/rofi/launcher.sh";
+	#    "on-click"= "wofi --show drun -I -a -n -W 500 -H 376 -s ~/.config/wofi/themes/gruvbox.css";
+	    "on-click-right"= "sh $HOME/.config/rofi/run.sh"  ;
+	#    "on-click-right"= "wofi --show run -I -a -n -W 500 -H 376 -s ~/.config/wofi/themes/gruvbox.css"  ;
+	  };
+	
+	  "custom/wf-recorder"= {
+			"format"= "{}";
+			"interval"= "once";
+			"exec"= "echo ''";
+			"tooltip"= "false";
+			"exec-if"= "pgrep 'wf-recorder'";
+			"on-click"= "exec ./scripts/wlrecord.sh";
+			"signal"= 8;
+		};
+	
+	  "custom/hyprpicker"= {
+	    "format"= "󰈋";
+	    "on-click"= "hyprpicker -a -f hex";
+	    "on-click-right"= "hyprpicker -a -f rgb";
+	  };
+	  }
     ]; 
     style = ''
-   * {
-                 font-family: "JetBrainsMono Nerd Font";
-                 font-size: 12pt;
-                 font-weight: bold;
-                 border-radius: 0px;
-                 transition-property: background-color;
-                 transition-duration: 0.5s;
-               }
-               @keyframes blink_red {
-                 to {
-                   background-color: rgb(242, 143, 173);
-                   color: rgb(26, 24, 38);
-                 }
-               }
-               .warning, .critical, .urgent {
-                 animation-name: blink_red;
-                 animation-duration: 1s;
-                 animation-timing-function: linear;
-                 animation-iteration-count: infinite;
-                 animation-direction: alternate;
-               }
-               window#waybar {
-                 background-color: transparent;
-               }
-               window > box {
-                 margin-left: 5px;
-                 margin-right: 5px;
-                 margin-top: 5px;
-                 background-color: rgb(30, 30, 46);
-               }
-         #workspaces {
-                 padding-left: 0px;
-                 padding-right: 4px;
-               }
-         #workspaces button {
-                 padding-top: 5px;
-                 padding-bottom: 5px;
-                 padding-left: 6px;
-                 padding-right: 6px;
-               }
-         #workspaces button.active {
-                 background-color: rgb(181, 232, 224);
-                 color: rgb(26, 24, 38);
-               }
-         #workspaces button.urgent {
-                 color: rgb(26, 24, 38);
-               }
-         #workspaces button:hover {
-                 background-color: rgb(248, 189, 150);
-                 color: rgb(26, 24, 38);
-               }
-               tooltip {
-                 background: rgb(48, 45, 65);
-               }
-               tooltip label {
-                 color: rgb(217, 224, 238);
-               }
-         #custom-launcher {
-                 font-size: 20px;
-                 padding-left: 8px;
-                 padding-right: 6px;
-                 color: #7ebae4;
-               }
-         #mode, #clock, #memory, #temperature,#cpu,#mpd, #custom-wall, #temperature, #backlight, #pulseaudio, #network, #battery, #custom-powermenu, #custom-cava-internal {
-                 padding-left: 10px;
-                 padding-right: 10px;
-               }
-               /* #mode { */
-               /* 	margin-left: 10px; */
-               /* 	background-color: rgb(248, 189, 150); */
-               /*     color: rgb(26, 24, 38); */
-               /* } */
-         #memory {
-                 color: rgb(181, 232, 224);
-               }
-         #cpu {
-                 color: rgb(245, 194, 231);
-               }
-         #clock {
-                 color: rgb(217, 224, 238);
-               }
-        /* #idle_inhibitor {
-                 color: rgb(221, 182, 242);
-               }*/
-         #custom-wall {
-                 color: rgb(221, 182, 242);
-            }
-         #temperature {
-                 color: rgb(150, 205, 251);
-               }
-         #backlight {
-                 color: rgb(248, 189, 150);
-               }
-         #pulseaudio {
-                 color: rgb(245, 224, 220);
-               }
-         #network {
-                 color: #ABE9B3;
-               }
+    * {
+    border: none;
+    border-radius: 0px;
+    /*font-family: VictorMono, Iosevka Nerd Font, Noto Sans CJK;*/
+    font-family: Iosevka, FontAwesome, Noto Sans CJK;
+    font-size: 14px;
+    font-style: normal;
+    min-height: 0;
+}
 
-         #network.disconnected {
-                 color: rgb(255, 255, 255);
-               }
-         #battery.charging, #battery.full, #battery.discharging {
-                 color: rgb(250, 227, 176);
-               }
-         #battery.critical:not(.charging) {
-                 color: rgb(242, 143, 173);
-               }
-         #custom-powermenu {
-                 color: rgb(242, 143, 173);
-               }
-         #tray {
-                 padding-right: 8px;
-                 padding-left: 10px;
-               }
-         #mpd.paused {
-                 color: #414868;
-                 font-style: italic;
-               }
-         #mpd.stopped {
-                 background: transparent;
-               }
-         #mpd {
-                 color: #c0caf5;
-               }
-         #custom-cava-internal{
-                 font-family: "Hack Nerd Font" ;
-               }
+window#waybar {
+    background: rgba(30, 30, 46, 0.5);
+    border-bottom: 1px solid #282828;
+    color: #f4d9e1
+}
+
+#workspaces {
+	background: #282828;
+	margin: 5px 5px 5px 5px;
+  padding: 0px 5px 0px 5px;
+	border-radius: 16px;
+  border: solid 0px #f4d9e1;
+  font-weight: normal;
+  font-style: normal;
+}
+#workspaces button {
+    padding: 0px 5px;
+    border-radius: 16px;
+    color: #928374;
+}
+
+#workspaces button.active {
+    color: #f4d9e1;
+    background-color: transparent;
+    border-radius: 16px;
+}
+
+#workspaces button:hover {
+	background-color: #E6B9C6;
+	color: black;
+	border-radius: 16px;
+}
+
+#custom-date, #clock, #battery, #pulseaudio, #network, #custom-randwall, #custom-launcher {
+	background: transparent;
+	padding: 5px 5px 5px 5px;
+	margin: 5px 5px 5px 5px;
+  border-radius: 8px;
+  border: solid 0px #f4d9e1;
+}
+
+#custom-date {
+	color: #D3869B;
+}
+
+#custom-power {
+	color: #24283b;
+	background-color: #db4b4b;
+	border-radius: 5px;
+	margin-right: 10px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 0px;
+	padding: 5px 10px;
+}
+
+#tray {
+    background: #282828;
+    margin: 5px 5px 5px 5px;
+    border-radius: 16px;
+    padding: 0px 5px;
+    /*border-right: solid 1px #282738;*/
+}
+
+#clock {
+    color: #E6B9C6;
+    background-color: #282828;
+    border-radius: 0px 0px 0px 24px;
+    padding-left: 13px;
+    padding-right: 15px;
+    margin-right: 0px;
+    margin-left: 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-weight: bold;
+    /*border-left: solid 1px #282738;*/
+}
+
+
+#battery {
+    color: #9ece6a;
+}
+
+#battery.charging {
+    color: #9ece6a;
+}
+
+#battery.warning:not(.charging) {
+    background-color: #f7768e;
+    color: #24283b;
+    border-radius: 5px 5px 5px 5px;
+}
+
+#backlight {
+    background-color: #24283b;
+    color: #db4b4b;
+    border-radius: 0px 0px 0px 0px;
+    margin: 5px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 0px 0px;
+}
+
+#network {
+    color: #f4d9e1;
+    border-radius: 8px;
+    margin-right: 5px;
+}
+
+#pulseaudio {
+    color: #f4d9e1;
+    border-radius: 8px;
+    margin-left: 0px;
+}
+
+#pulseaudio.muted {
+    background: transparent;
+    color: #928374;
+    border-radius: 8px;
+    margin-left: 0px;
+}
+
+#custom-randwall {
+    color: #f4d9e1;
+    border-radius: 8px;
+    margin-right: 0px;
+}
+
+#custom-launcher {
+    color: #e5809e;
+    background-color: #282828;
+    border-radius: 0px 24px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    padding: 0 20px 0 13px;
+    /*border-right: solid 1px #282738;*/
+    font-size: 20px;
+}
+
+#custom-launcher button:hover {
+    background-color: #FB4934;
+    color: transparent;
+    border-radius: 8px;
+    margin-right: -5px;
+    margin-left: 10px;
+}
+
+#custom-playerctl {
+	background: #282828;
+	padding-left: 15px;
+  padding-right: 14px;
+	border-radius: 16px;
+  /*border-left: solid 1px #282738;*/
+  /*border-right: solid 1px #282738;*/
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 0px;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 16px;
+}
+
+#custom-playerlabel {
+    background: transparent;
+    padding-left: 10px;
+    padding-right: 15px;
+    border-radius: 16px;
+    /*border-left: solid 1px #282738;*/
+    /*border-right: solid 1px #282738;*/
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-weight: normal;
+    font-style: normal;
+}
+
+#window {
+    background: #282828;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 16px;
+    /*border-left: solid 1px #282738;*/
+    /*border-right: solid 1px #282738;*/
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-weight: normal;
+    font-style: normal;
+}
+
+#custom-wf-recorder {
+    padding: 0 20px;
+    color: #e5809e;
+    background-color: #1E1E2E;
+}
+
+#cpu {
+    background-color: #282828;
+    /*color: #FABD2D;*/
+    border-radius: 16px;
+    margin: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 0px 10px 0px 10px;
+    font-weight: bold;
+}
+
+#memory {
+    background-color: #282828;
+    /*color: #83A598;*/
+    border-radius: 16px;
+    margin: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 0px 10px 0px 10px;
+    font-weight: bold;
+}
+
+#disk {
+    background-color: #282828;
+    /*color: #8EC07C;*/
+    border-radius: 16px;
+    margin: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 0px 10px 0px 10px;
+    font-weight: bold;
+}
+
+#custom-hyprpicker {
+    background-color: #282828;
+    /*color: #8EC07C;*/
+    border-radius: 16px;
+    margin: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 0px 11px 0px 9px;
+    font-weight: bold;
+}
    '';
    
  };

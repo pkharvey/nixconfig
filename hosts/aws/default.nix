@@ -12,6 +12,7 @@
 
   programs.hyprland.enable = true;
 
+  environment.binsh = "${pkgs.dash}/bin/dash";
 
        # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

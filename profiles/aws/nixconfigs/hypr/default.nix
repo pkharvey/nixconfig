@@ -40,7 +40,7 @@ init {
   exec-once = [workspace 5 silent] pavucontrol
   exec-once = [workspace 1 silent] telegram-desktop
   exec-once = [workspace 1 silent] discordcanary
-  exec-once = [workspace 3 silent] steam 
+  exec-once = [workspace 3 silent] steam -nochatui -nofriendsui  
   exec-once = [workspace 2 silent] microsoft-edge
   exec-once = [workspace 4 silent] spotify
 }
