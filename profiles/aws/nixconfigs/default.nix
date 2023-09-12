@@ -3,5 +3,6 @@
 imports = [
 	./zsh
 	./hypr
+	./kitty
  ];
 }

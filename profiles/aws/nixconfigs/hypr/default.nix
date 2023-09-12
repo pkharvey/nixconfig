@@ -1,4 +1,4 @@
-{config, pkgs, ...}: {
+{config, inputs , lib, outputs, pkgs, ...}: {
   wayland.windowManager.hyprland.extraConfig = ''
   
 monitor=,1920x1080@144,auto,auto

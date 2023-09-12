@@ -1,8 +1,12 @@
 { inputs, outputs, lib, config, pkgs, ... }:
 {
   imports = [
+  ./colors.nix
   ./nixconfigs
   ./configs
+
+  inputs.nix-colors.homeManagerModules.default
+
   ];
 
   home.packages = with pkgs; [
@@ -10,7 +14,6 @@
     zsh
     xorg.xhost
     signal-desktop 
-    kitty
     gamemode
     gamescope
     tldr
@@ -29,7 +32,6 @@
     gimp
     git
     spotify
-    xdg-desktop-portal-hyprland
     libsForQt5.dolphin
     gnome.file-roller
     discord-canary
@@ -90,15 +92,10 @@
   fira-code-symbols
   ];
   
-  
+  wayland.windowManager.hyprland.enable = true; 
 
   nixpkgs.config.allowUnfree = true;
     
-  # MODULES
-
-  nix-colors.homeManagerModules.default;
-  hyprland.homeManagerModules.default;
-
   programs.git.enable = true;
   programs.home-manager.enable = true;
   home.username = "aws";

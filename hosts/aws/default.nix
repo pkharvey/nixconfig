@@ -10,11 +10,16 @@
       (modulesPath + "/programs/gamescope.nix")
      ];
 
+  programs.hyprland.enable = true;
 
 
        # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   services.flatpak.enable = true;
+  xdg.portal = {
+     enable = true;
+     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+     };
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
  
@@ -60,7 +65,6 @@
                wayland = true;
                };
 	}; 
-  programs.hyprland.enable = true;
 
 
 
