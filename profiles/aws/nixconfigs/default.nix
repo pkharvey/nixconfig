@@ -4,5 +4,6 @@ imports = [
 	./zsh
 	./hypr
 	./kitty
+        ./waybar
  ];
 }
