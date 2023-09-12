@@ -29,14 +29,13 @@
         color7 = "#${base05}";
         
         # bright
-        color8 = "#${base03}";
-        color9 = "#${base09}";
+        color8  = "#${base03}";
+        color9  = "#${base09}";
         color10 = "#${base01}";
         color11 = "#${base02}";
         color12 = "#${base04}";
         color13 = "#${base06}";
         color14 = "#${base0F}";
         color15 = "#${base07}";
-        
-      };
- };
+     };
+}
