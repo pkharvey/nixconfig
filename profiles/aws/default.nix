@@ -10,6 +10,7 @@
   ];
 
   home.packages = with pkgs; [
+  playerctl
     android-tools
     zsh
     xorg.xhost
