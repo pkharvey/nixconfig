@@ -200,7 +200,7 @@ windowrule=workspace 1,$dropterm
 windowrule=float,$dropterm
 windowrule=size 75% 20%,$dropterm
 windowrule=move 12.5% -469,$dropterm
-bind=,49,exec,bash $HOME/scripts/dropdown.sh
+bind=$mainMod,49,exec,bash $HOME/scripts/dropdown.sh
 
 
 '';
