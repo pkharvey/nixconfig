@@ -10,88 +10,33 @@
   ];
 
   home.packages = with pkgs; [
-  playerctl
-    android-tools
-    zsh
-    xorg.xhost
-    signal-desktop 
-    gamemode
-    gamescope
-    tldr
-    autojump  
-    thefuck
-    ffmpeg
-    vlc
-    mpv
-    syncplay
-    telegram-desktop
-    microsoft-edge
-    wine
-    protonup-qt
-    lutris     
-    mangohud
-    gimp
-    git
-    spotify
-    libsForQt5.dolphin
-    gnome.file-roller
-    discord-canary
-    way-displays
-    ventoy-full
-    vulkan-tools
-    polkit_gnome
-    gparted
-    python311
-    python311Packages.pipx
-    lzip
-    neovim
-    git
-    waybar
+    
+    
+    android-tools  xorg.xhost  python311  python311Packages.pipx
+    neovim  ventoy-full
+    lzip  fzf  gh  git  playerctl  zsh  tldr  autojump  thefuck
+    
+    vulkan-tools  wine  protonup-qt  lutris  mangohud  gamemode  gamescope
+    
+    ffmpeg  vlc  mpv  syncplay
+    
+    (wrapOBS { plugins = with obs-studio-plugins; [ obs-backgroundremoval obs-vaapi wlrobs obs-gstreamer obs-vkcapture ]; })
+    telegram-desktop  discord-canary  signal-desktop 
+    spotify  microsoft-edge  gimp
+    
+    
     #sound :
-    pavucontrol
-    qjackctl
-    wireplumber
-    helvum
+    pavucontrol  qjackctl  wireplumber  helvum
+    
     #hypr assets : 
-    mako
-    (wrapOBS {
-      plugins = with obs-studio-plugins; [
-        obs-backgroundremoval
-	obs-vaapi
-        wlrobs
-	obs-gstreamer
-        obs-vkcapture
-      ];
-     })
-    bemenu
-    gh
-    connman-gtk
-    blueberry
-    wpa_supplicant
-    swww
-    flatpak
-    flatpak-builder
-    gnome.gnome-software
-    cliphist
-    libsForQt5.qt5.qtwayland
-    fzf
-    playerctl
-    inputs.hyprland-contrib.packages.${pkgs.system}.grimblast 
-    wtype
-    wl-clipboard
-    lxappearance
-    wlr-randr
-  #fonts
-  jetbrains-mono
-  font-awesome
-  font-awesome_5
-  font-awesome_4
-  nerdfonts
-  terminus-nerdfont
-  inconsolata-nerdfont
-  nerdfix
-  fira-code
-  fira-code-symbols
+    way-displays  polkit_gnome  cliphist wl-clipboard wtype libsForQt5.dolphin  inputs.hyprland-contrib.packages.${pkgs.system}.grimblast
+    waybar  gnome.gnome-software bemenu  wpa_supplicant    wlr-randr  libsForQt5.qt5.qtwayland  mako  swww  connman-gtk  blueberry gparted   
+    
+    
+    flatpak  flatpak-builder
+    
+    #fonts
+    jetbrains-mono  font-awesome  font-awesome_5  font-awesome_4  nerdfonts  terminus-nerdfont  inconsolata-nerdfont  nerdfix  fira-code  fira-code-symbols
   ];
   
   wayland.windowManager.hyprland.enable = true; 
