@@ -177,7 +177,7 @@
 	  };
 	  }
     ]; 
-    style = ''
+ style = ''
     * {
     border: none;
     border-radius: 0px;
@@ -186,7 +186,7 @@
     font-size: 14px;
     font-style: normal;
     min-height: 0;
-}
+    }
 
 window#waybar {
     background: rgba(30, 30, 46, 0.5);
