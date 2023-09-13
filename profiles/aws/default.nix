@@ -82,6 +82,7 @@
     lxappearance
     wlr-randr
   #fonts
+  jetbrains-mono
   font-awesome
   font-awesome_5
   font-awesome_4

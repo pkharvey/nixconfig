@@ -61,7 +61,10 @@ general {
 windowRules{
     #windowrulev2 = float,class:(pavucontrol)
     #windowrulev2 = float,class:(connman-gtk)
-    #windowrulev2 = float,class:(blueberry)
+
+    windowrulev2 = workspace 3 silent,class:(steam)
+    windowrulev2 = workspace 5 silent,class:(blueberry)
+
 
 }
 
@@ -72,7 +75,7 @@ decoration {
     rounding = 3
     blur {
           enabled = yes
-          size = 1
+          size = 4 
           passes = 1
           new_optimizations = on
     }
