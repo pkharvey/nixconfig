@@ -18,7 +18,7 @@
 
   outputs = { self , nixpkgs, home-manager, nixos-hardware, ... }@inputs:
   {
-    nixpkgs.overlays = import ./overlays { inherit inputs; };
+    overlays = import ./overlays { inherit inputs; };
     nixosModules = import ./modules/nixos;
     homeManagerModules = import ./modules/home;
 

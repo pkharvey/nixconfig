@@ -10,7 +10,8 @@
   ];
 
   home.packages = with pkgs; [
-   ttf-icomoon-feather
+    
+    ttf-icomoon-feather
     android-tools  xorg.xhost  python311  python311Packages.pipx
     neovim  ventoy-full
     lzip  fzf  gh  git  playerctl  zsh  tldr  autojump  thefuck
