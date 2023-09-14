@@ -1,5 +1,4 @@
 {
-  #https://github.com/PROxZIMA/.dotfiles/
   description = "A NixOS flake for Aws.";
 
   inputs = {
@@ -19,7 +18,7 @@
 
   outputs = { self , nixpkgs, home-manager, nixos-hardware, ... }@inputs:
   {
-    overlays = import ./overlays { inherit inputs; };
+    nixpkgs.overlays = import ./overlays { inherit inputs; };
     nixosModules = import ./modules/nixos;
     homeManagerModules = import ./modules/home;
 

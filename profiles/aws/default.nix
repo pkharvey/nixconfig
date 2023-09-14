@@ -10,8 +10,7 @@
   ];
 
   home.packages = with pkgs; [
-    
-    
+   ttf-icomoon-feather
     android-tools  xorg.xhost  python311  python311Packages.pipx
     neovim  ventoy-full
     lzip  fzf  gh  git  playerctl  zsh  tldr  autojump  thefuck
@@ -30,7 +29,7 @@
     
     #hypr assets : 
     way-displays  polkit_gnome  cliphist wl-clipboard wtype libsForQt5.dolphin  inputs.hyprland-contrib.packages.${pkgs.system}.grimblast
-    waybar  gnome.gnome-software bemenu  wpa_supplicant    wlr-randr  libsForQt5.qt5.qtwayland  mako  swww  connman-gtk  blueberry gparted   
+    wofi waybar  gnome.gnome-software bemenu  wpa_supplicant    wlr-randr  libsForQt5.qt5.qtwayland  mako  swww  connman-gtk  blueberry gparted   
     
     
     flatpak  flatpak-builder
