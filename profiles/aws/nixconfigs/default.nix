@@ -4,6 +4,7 @@ imports = [
 	./zsh
 	./hypr
 	./kitty
-        ./waybar
+    ./waybar
+	./wofi
  ];
 }
