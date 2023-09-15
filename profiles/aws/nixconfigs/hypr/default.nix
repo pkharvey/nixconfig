@@ -64,6 +64,8 @@ windowRules{
 
     windowrulev2 = workspace 3 silent,class:(steam)
     windowrulev2 = workspace 5 silent,class:(blueberry)
+    windowrulev2 = workspace 1 silent,class:(discordcanary)    
+    windowrulev2 = workspace 1 silent,class:(discord)
 
 
 }
@@ -95,7 +97,10 @@ animations {
     animation = border, 1, 10, default
     animation = borderangle, 1, 8, default
     animation = fade, 1, 7, default
-    animation = workspaces, 1, 6, default
+    animation = workspaces, 1, 5, slidevert
+
+
+
 }
 
 dwindle {
