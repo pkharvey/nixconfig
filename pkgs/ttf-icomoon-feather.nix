@@ -15,13 +15,13 @@ let
 
 in stdenv.mkDerivation {
   inherit pname version;
-  srcs = font;
+  src = font;
   sourceRoot = ".";
 
   dontUnpack = true;
 
   installPhase = ''
-    install -D $srcs -t $out/share/fonts/truetype/
+    install -D $src -t $out/share/fonts/truetype/
   '';
 
   meta = with lib; {
