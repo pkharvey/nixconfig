@@ -2,15 +2,15 @@
 {
   programs.bash = {
     shellAliases = {
-      gr="cd $(git rev-parse --show-toplevel || pwd)";
-      g="git";
       ga="git add";
+      gb="git branch";
+      gc="git commit";
       gd="git diff";
       gdc="git diff --cached";
-      gb="git branch";
       gl="git log --oneline --decorate --graph --all";
       glb="git log --graph --simplify-by-decoration --pretty=format:'%d' --all";
       gll="git log";
+      gr="cd $(git rev-parse --show-toplevel || pwd)";
       s="git status";
       shlvl="echo $SHLVL";
       n="nix-shell -p";
