@@ -10,7 +10,6 @@
       (modulesPath + "/programs/gamescope.nix")
      ];
 
-  programs.hyprland.enable = true;
 
   environment.binsh = "${pkgs.dash}/bin/dash";
 
@@ -89,8 +88,19 @@
     loader.efi.canTouchEfiVariables = true;
   };
  
- 
+  nix.settings = {
+      experimental-features = [ "nix-command" "flakes" ];
+      substituters = ["https://hyprland.cachix.org"];
+      trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+  };
+
+
   services.printing.enable = true;
+  programs.hyprland = {
+      enable = true;
+      package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+  };
+
 
   programs.zsh.enable = true; 
   users.users.aws = {

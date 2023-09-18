@@ -1,5 +1,9 @@
 {config, inputs , lib, outputs, pkgs, ...}: {
-  wayland.windowManager.hyprland.extraConfig = ''
+  
+
+  wayland.windowManager.hyprland={
+  enable = true;
+  extraConfig = with config.colorScheme.colors; ''
   
 monitor=,1920x1080@144,auto,auto
 
@@ -52,8 +56,8 @@ general {
     gaps_in = 5
     gaps_out = 5
     border_size = 2
-    col.active_border = rgba(${config.colorScheme.colors.base05}ee) rgba(${config.colorScheme.colors.base00}ee) 45deg
-    col.inactive_border = rgba(${config.colorScheme.colors.base01}aa)
+    col.active_border = rgba(${base05}ee) rgba(${base00}ee) 45deg
+    col.inactive_border = rgba(${base01}aa)
 
     layout = dwindle
 }
@@ -71,16 +75,27 @@ windowRules{
 }
 
 decoration {
+
   
     windowrulev2 = opacity 0.8 override 0.5,class:(kitty)
 
-    rounding = 3
+    multisample_edges = true
+
+    rounding = 16 
     blur {
-          enabled = yes
-          size = 4 
-          passes = 1
-          new_optimizations = on
+    enabled = false
+    size = 5
+    passes = 4
+    new_optimizations = true
+    xray = true
+    ignore_opacity = true    
     }
+      # Blurring layerSurfaces
+    # blurls = gtk-layer-shell
+    # blurls = waybar
+    # blurls = lockscreen
+    blurls = wofi
+
     drop_shadow = yes
     shadow_range = 4
     shadow_render_power = 3
@@ -97,7 +112,7 @@ animations {
     animation = border, 1, 10, default
     animation = borderangle, 1, 8, default
     animation = fade, 1, 7, default
-    animation = workspaces, 1, 5, slidevert
+    animation = workspaces, 1, 5, default 
 
 
 
@@ -209,4 +224,5 @@ bind=$mainMod,49,exec,bash $HOME/scripts/dropdown.sh
 
 
 '';
+};
 }
