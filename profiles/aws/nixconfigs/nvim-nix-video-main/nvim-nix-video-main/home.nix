@@ -1,24 +1,7 @@
 { config, pkgs, inputs, ... }:
 
 {
-  home.username = "vimjoyer";
-  home.homeDirectory = "/home/vimjoyer";
-  home.stateVersion = "22.11"; # Please read the comment before changing.
-
-  nixpkgs = {
-    overlays = [
-      (final: prev: {
-        vimPlugins = prev.vimPlugins // {
-          own-onedark-nvim = prev.vimUtils.buildVimPlugin {
-            name = "onedark";
-            src = inputs.plugin-onedark;
-          };
-        };
-      })
-    ];
-  };
-
-  programs.neovim = 
+   programs.neovim = 
   let
     toLua = str: "lua << EOF\n${str}\nEOF\n";
     toLuaFile = file: "lua << EOF\n${builtins.readFile file}\nEOF\n";
@@ -113,6 +96,4 @@
     #   ${builtins.readFile ./nvim/plugin/other.lua}
     # '';
   };
-
-  programs.home-manager.enable = true;
 }
