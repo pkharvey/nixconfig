@@ -37,10 +37,15 @@
         plugin = gruvbox-nvim;
         config = "colorscheme gruvbox";
       }
+      {
+        plugin = harpoon;
+        config = toLua "require(\"harpoon\").setup()";
+      }
+      
 
       neodev-nvim
 
-      nvim-cmp 
+      nvim-cmp cmp-nvim-lsp
       {
         plugin = nvim-cmp;
         config = toLuaFile ./nvim/plugin/cmp.lua;
@@ -53,16 +58,11 @@
 
       telescope-fzf-native-nvim
 
-      cmp_luasnip
-      cmp-nvim-lsp
+      cmp_luasnip luasnip lualine-nvim  lualine-nvim
+      
+       friendly-snippets
 
-      luasnip
-      friendly-snippets
-
-
-      lualine-nvim
       nvim-web-devicons
-
       {
         plugin = (nvim-treesitter.withPlugins (p: [
           p.tree-sitter-nix
