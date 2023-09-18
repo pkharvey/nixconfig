@@ -10,7 +10,7 @@ pkgs.stdenv.mkDerivation{
  };
  installPhase = ''
  mkdir -p $out
- cp -R ./Breath/gtk-3.0/* $out/
+ cp -R ./Breath/* $out/
  '';
 
 }
