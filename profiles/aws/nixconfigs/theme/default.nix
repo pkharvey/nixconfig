@@ -9,6 +9,8 @@ let
   gruvboxplus = import ./gruvbox-plus.nix { inherit pkgs; };
 in
 {
+
+  xserver.displayManager.sddm.theme = sddm-sugar-dark;
   home.pointerCursor = {
     package = pkgs.bibata-cursors;
     name = "Bibata-Modern-Classic";
@@ -43,7 +45,7 @@ in
   theme.package = pkgs.adw-gtk3;
   theme.name = "adw-gtk3";
   
-  iconTheme.package = gruvboxPlus;
-  iconTheme.name = "GruvboxPlus";
+  iconTheme.package = gruvboxplus;
+  iconTheme.name = "gruvboxplus";
     };
   }
