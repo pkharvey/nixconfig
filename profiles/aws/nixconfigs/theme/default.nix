@@ -5,12 +5,10 @@
 }:
 let 
   breath-gtk = import ./breath-gtk.nix {inherit pkgs;};
-  sddm-sugar-dark = import ./sddm-sugar-dark.nix {inherit pkgs;};
   gruvboxplus = import ./gruvbox-plus.nix { inherit pkgs; };
 in
 {
 
-  xserver.displayManager.sddm.theme = sddm-sugar-dark;
   home.pointerCursor = {
     package = pkgs.bibata-cursors;
     name = "Bibata-Modern-Classic";
@@ -22,10 +20,10 @@ in
         enable = true;
         
         # platform theme "gtk" or "gnome"
-        platformTheme = "gtk";
+        platformTheme = "gnome";
         
         # name of the theme
-        style.name = "adwaita-dark";
+        style.name = "adwaita";
         
         # detected automatically:
         # adwaita, adwaita-dark, adwaita-highcontrast,
@@ -45,7 +43,7 @@ in
   theme.package = pkgs.adw-gtk3;
   theme.name = "adw-gtk3";
   
-  iconTheme.package = gruvboxplus;
-  iconTheme.name = "gruvboxplus";
+  iconTheme.package = pkgs.zafiro-icons;
+  iconTheme.name = "gnome";
     };
   }

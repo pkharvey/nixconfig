@@ -12,7 +12,8 @@
   home.packages = with pkgs; [
     
    #ttf-icomoon-feather
-    winetricks wine-staging android-tools  xorg.xhost xdg-desktop-portal-gtk at-spi2-atk 
+    protontricks  winetricks wine-staging android-tools  xorg.xhost xdg-desktop-portal-gtk at-spi2-atk 
+
 
     
     python311  python311Packages.pipx
@@ -24,7 +25,7 @@
     ffmpeg  vlc  mpv  syncplay
     
     (wrapOBS { plugins = with obs-studio-plugins; [ obs-backgroundremoval obs-vaapi wlrobs obs-gstreamer obs-vkcapture ]; })
-    telegram-desktop  discord-canary  signal-desktop 
+    telegram-desktop  signal-desktop 
     spotify  microsoft-edge  gimp
     
     
@@ -33,7 +34,7 @@
     
     #hypr assets : 
     way-displays  polkit_gnome  cliphist wl-clipboard wtype libsForQt5.dolphin  inputs.hyprland-contrib.packages.${pkgs.system}.grimblast
-    libsForQt5.ark waybar  gnome.gnome-software bemenu  wpa_supplicant    wlr-randr  libsForQt5.qt5.qtwayland  mako  swww  connman-gtk  blueberry gparted   
+    libsForQt5.ark waybar  gnome.gnome-software bemenu  wpa_supplicant    wlr-randr libsForQt5.qt5.qtwayland  mako  swww  connman-gtk  blueberry gparted   
 
     #wofi
      

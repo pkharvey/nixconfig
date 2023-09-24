@@ -3,6 +3,7 @@
 {
   imports =
     [ 
+      ./virtualization.nix
       ./hardware.nix
       (modulesPath + "/programs/noisetorch.nix")
       (modulesPath + "/programs/autojump.nix")
@@ -47,8 +48,6 @@
   services.connman={enable=true; wifi.backend="wpa_supplicant";};
   hardware.bluetooth.enable = true;
   
-  
-
   programs.steam = {
   enable = true;
   remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
@@ -61,8 +60,8 @@
        enable = true;
       # desktopManager.gnome.enable = true;
         displayManager.sddm = {
+               theme = "${import ../../profiles/aws/nixconfigs/theme/sddm-theme.nix {inherit pkgs;}}"; 
                enable = true;
-               wayland = true;
                };
 	}; 
 
@@ -107,13 +106,15 @@
     shell = pkgs.zsh;
     isNormalUser = true;
     description = "aws abdulrahman";
-    extraGroups = ["wheel" ];
+    extraGroups = ["wheel libvirtd" ];
     packages = with pkgs; [
     ];
   };
 
   environment.systemPackages = with pkgs; [
     linuxPackages.v4l2loopback
+    libsForQt5.qt5.qtgraphicaleffects
+    libsForQt5.qt5.qtquickcontrols2
   ];
  
   system.stateVersion = "23.05"; 
