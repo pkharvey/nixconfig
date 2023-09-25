@@ -5,17 +5,17 @@
     [ 
       ./virtualization.nix
       ./hardware.nix
-      (modulesPath + "/programs/noisetorch.nix")
-      (modulesPath + "/programs/autojump.nix")
-      (modulesPath + "/programs/gamemode.nix")
-      (modulesPath + "/programs/gamescope.nix")
      ];
 
 
   environment.binsh = "${pkgs.dash}/bin/dash";
 
        # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs = {
+  overlays = [(final: prev: { stable = import inputs.nixpkgs-stable { system = "x86_64-linux"; config.allowUnfree = true; };}) ];
+  config.allowUnfree = true;
+  config.allowBroken = true;
+  };
   services.flatpak.enable = true;
   xdg.portal = {
      enable = true;
@@ -28,9 +28,6 @@
   i18n.defaultLocale = "en_US.UTF-8";
  
   sound.enable = true;
-  programs.noisetorch.enable = true;
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
     audio.enable = true;
@@ -45,16 +42,21 @@
 
 
   #networking.networkmanager.enable = true;
-  services.connman={enable=true; wifi.backend="wpa_supplicant";};
   hardware.bluetooth.enable = true;
   
-  programs.steam = {
-  enable = true;
-  remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-  dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-  };
 
 
+  services.connman={enable=true; wifi.backend="wpa_supplicant";};
+  hardware.pulseaudio.enable = false;
+  security.rtkit.enable = true;
+  security.sudo.enable = true;
+    security.sudo.configFile = '' %wheel ALL=(ALL) ALL '';
+  services.zerotierone.enable = true;
+  services.zerotierone.joinNetworks = [ "6ab565387a095d4c" ];
+  programs.noisetorch.enable =true;
+  programs.autojump.enable =true;
+  programs.gamemode.enable =true;
+  programs.gamescope.enable =true;
 
   services.xserver = {
        enable = true;
@@ -100,13 +102,19 @@
       package = inputs.hyprland.packages.${pkgs.system}.hyprland;
   };
 
+  programs.steam = {
+  package = pkgs.stable.steam;
+  enable = true;
+  remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+  dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+  };
 
   programs.zsh.enable = true; 
   users.users.aws = {
     shell = pkgs.zsh;
     isNormalUser = true;
     description = "aws abdulrahman";
-    extraGroups = ["wheel libvirtd" ];
+    extraGroups = [ "wheel" "libvirtd" ];
     packages = with pkgs; [
     ];
   };

@@ -8,7 +8,10 @@
 
     nixpkgs.url = "github:/nixos/nixpkgs/nixos-unstable";
 
+    nixpkgs-stable.url = "github:nixos/nixpkgs/release-23.05";
+
     hyprland-contrib.url = "github:hyprwm/contrib";
+
     nix-colors.url = "github:misterio77/nix-colors";
 
 
@@ -16,7 +19,7 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self , nixpkgs, home-manager, nixos-hardware, ... }@inputs:
+  outputs = { self , nixpkgs , nixpkgs-stable ,home-manager, nixos-hardware, ... }@inputs:
   {
     overlays = import ./overlays { inherit inputs; };
     nixosModules = import ./modules/nixos;
