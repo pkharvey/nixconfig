@@ -2,5 +2,6 @@
 {
   xdg.configFile = {
     MangoHud.source = ./MangoHud;
+    hypr.source = ../hypr;
   };
 }

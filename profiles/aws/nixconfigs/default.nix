@@ -3,7 +3,6 @@
 imports = [
    ./theme
 	./zsh
-	./hypr
 	./kitty
     ./waybar
 	./wofi
