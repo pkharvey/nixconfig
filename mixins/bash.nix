@@ -2,6 +2,7 @@
 {
   programs.bash = {
     shellAliases = {
+      cls="clear";
       ga="git add";
       gb="git branch";
       gc="git commit";
