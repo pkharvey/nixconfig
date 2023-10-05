@@ -7,6 +7,7 @@
     extraGroups = [
       "wheel"
       "dialout"
+      "plugdev"
       "docker"
     ];
     openssh.authorizedKeys.keys = [

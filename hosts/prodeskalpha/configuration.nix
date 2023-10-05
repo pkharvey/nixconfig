@@ -35,6 +35,8 @@
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
   boot.tmp.useTmpfs = true;
 
+  hardware.rtl-sdr.enable = true;
+
   system.stateVersion = "22.05";
 }
 
