@@ -5,7 +5,7 @@
       cls="clear";
       ga="git add";
       gb="git branch";
-      gc="git commit";
+      gc="git checkout";
       gd="git diff";
       gdc="git diff --cached";
       gl="git log --oneline --decorate --graph --all";
