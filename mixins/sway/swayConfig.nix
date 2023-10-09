@@ -71,11 +71,21 @@ in
           "${modifier}+Down"          = "focus down";
           "${modifier}+Up"            = "focus up";
           "${modifier}+Right"         = "focus right";
+          "${modifier}+Mod1+Left"     = "focus output left";
+          "${modifier}+Mod1+Down"     = "focus output down";
+          "${modifier}+Mod1+Up"       = "focus output up";
+          "${modifier}+Mod1+Right"    = "focus output right";
+          "${modifier}+Mod1+h"        = "focus output left";
+          "${modifier}+Mod1+j"        = "focus output down";
+          "${modifier}+Mod1+k"        = "focus output up";
+          "${modifier}+Mod1+l"        = "focus output right";
           "${modifier}+XF86Back"      = "workspace prev";
           "${modifier}+XF86Forward"   = "workspace next";
           "${modifier}+Prior"         = "workspace prev";
           "${modifier}+Next"          = "workspace next";
           "${modifier}+Tab"           = "workspace back_and_forth";
+          "${modifier}+Shift+Tab"     = "move container to workspace back_and_forth";
+          "${modifier}+Control+Tab"   = "move container to workspace back_and_forth; workspace back_and_forth";
 
           "XF86AudioMute"        = "exec ${pkgs.pamixer} --toggle-mute";
           "XF86AudioLowerVolume" = "exec ${pkgs.pamixer} --decrease 5";
