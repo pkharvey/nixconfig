@@ -17,6 +17,19 @@
       n="nix-shell -p";
       r="nix repl";
       ssh = "env TERM=xterm-256color ssh";
+      cdnrf = "cd /home/pasha/git/nrf-architecture";
+      flashsector = "nrfjprog -f NRF91 --sectorerase --verify --reset --program";
+      flashchip = "nrfjprog -f NRF91 --chiperase --verify --reset --program";
+      flashprod = "nrfjprog -f NRF91 --sectorerase --verify --reset --program /home/pasha/git/nrf-architecture/production-firmware/build/zephyr/merged.hex";
+      flashtest = "nrfjprog -f NRF91 --chiperase --verify --reset --program /home/pasha/git/nrf-architecture/test-firmware/build/zephyr/merged.hex";
+      flashlte = "nrfjprog -f NRF91 --chiperase --verify --reset --program /home/pasha/m/nrfmodemfirmware/mfw_nrf9160_1.3.5.zip";
+      serialflashprod = "mcumgr image upload /home/pasha/git/nrf-architecture/production-firmware/build/zephyr/app_update.bin -c usb0";
+      serialflashtest = "mcumgr image upload /home/pasha/git/nrf-architecture/test-firmware/build/zephyr/app_update.bin -c usb0";
+      nrfreset = "nrfjprog -f NRF91 --reset";
+      gensteps = "(cd /home/pasha/git/nrf-architecture/wire-server && exec bundle exec ruby generate_step_header.rb ../test-firmware/src/steps.h)";
+      wireserver = "(cd /home/pasha/git/nrf-architecture/wire-server && exec bundle exec ruby server.rb /dev/ttyUSB0 3901)";
+      nrfcom = "picocom -q /dev/ttyUSB0 -b 38400";
+      cucumber = "bundle exec cucumber";
     };
     interactiveShellInit = ''
       unalias che >/dev/null 2>&1
