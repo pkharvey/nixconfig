@@ -17,6 +17,7 @@
 
       pulsemixer
       pavucontrol
+      wdisplays
 
       vlc
       youtube-dl
