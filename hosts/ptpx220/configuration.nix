@@ -93,6 +93,8 @@
   # For mounting Android MTP devices
   services.gvfs.enable = true;
 
+  hardware.rtl-sdr.enable = true;
+
   system.stateVersion = "22.05";
 }
 
