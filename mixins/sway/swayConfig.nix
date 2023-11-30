@@ -91,6 +91,8 @@ in
           "XF86AudioLowerVolume" = "exec ${pkgs.pamixer} --decrease 5";
           "XF86AudioRaiseVolume" = "exec ${pkgs.pamixer} --increase 5";
           "XF86AudioMicMute"     = "exec ${pkgs.pamixer} --default-source --toggle-mute";
+          "Pause"                = "exec ${pkgs.playerctl}/bin/playerctl -a pause";
+          "Shift+Pause"          = "exec ${pkgs.playerctl}/bin/playerctl play-pause";
 
           "XF86AudioStop" = "exec ${pkgs.playerctl}/bin/playerctl stop";
           "XF86AudioPrev" = "exec ${pkgs.playerctl}/bin/playerctl previous";
