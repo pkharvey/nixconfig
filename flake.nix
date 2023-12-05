@@ -11,9 +11,10 @@
       url = "github:colemickens/flake-firefox-nightly";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    waveforms.url = "github:liff/waveforms-flake";
   };
 
-  outputs = { self, nixpkgs, home-manager, robotnix, firefox, nixinate, nixos-hardware, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, robotnix, firefox, waveforms, nixinate, nixos-hardware, ... }@inputs: {
 
     apps = nixinate.nixinate.x86_64-linux self;
 
@@ -45,6 +46,8 @@
               home.homeDirectory = "/home/pasha";
             };
           }
+          waveforms.nixosModule
+          ({ nixpkgs.config.allowUnfree = true; })
         ];
         specialArgs = { inherit inputs; };
       };
@@ -84,6 +87,8 @@
               home.homeDirectory = "/home/pasha";
             };
           }
+          waveforms.nixosModule
+          ({ nixpkgs.config.allowUnfree = true; })
         ];
         specialArgs = { inherit inputs; };
       };

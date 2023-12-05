@@ -268,6 +268,19 @@
         "type": "github"
       }
     },
+    "nixpkgs_6": {
+      "locked": {
+        "lastModified": 1683408522,
+        "narHash": "sha256-9kcPh6Uxo17a3kK3XCHhcWiV1Yu1kYj22RHiymUhMkU=",
+        "path": "/nix/store/zjpd6dn9kza8zl3l17cwgyifsxbvi3nb-source",
+        "rev": "897876e4c484f1e8f92009fd11b7d988a121a4e7",
+        "type": "path"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "type": "indirect"
+      }
+    },
     "robotnix": {
       "inputs": {
         "androidPkgs": "androidPkgs",
@@ -295,7 +308,26 @@
         "nixinate": "nixinate",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_3",
-        "robotnix": "robotnix"
+        "robotnix": "robotnix",
+        "waveforms": "waveforms"
+      }
+    },
+    "waveforms": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_6"
+      },
+      "locked": {
+        "lastModified": 1701717586,
+        "narHash": "sha256-IKhjmPvPy+AE7e1cUQh2VbgtX4dKYuCKfIevdkplV+E=",
+        "owner": "liff",
+        "repo": "waveforms-flake",
+        "rev": "72fd4112688e8f74064147483af92e39baef25f5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "liff",
+        "repo": "waveforms-flake",
+        "type": "github"
       }
     }
   },
