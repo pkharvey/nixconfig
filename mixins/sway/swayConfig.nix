@@ -58,7 +58,7 @@ in
           "${modifier}+F11" = "exec ${switchToRussian}";
           "${modifier}+F12" = "exec ${switchUSVariant}";
 
-          "${modifier}+Escape"      = "kill";
+          "${modifier}+control+Escape" = "kill";
 
           "shift+Print"             = "exec ${pkgs.grim}/bin/grim - | ${pkgs.wl-clipboard}/bin/wl-copy -t image/png";
           "Print"                   = "exec ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp -d)\" - | ${pkgs.wl-clipboard}/bin/wl-copy -t image/png";
