@@ -17,6 +17,7 @@
       n="nix-shell -p";
       r="nix repl";
       ssh = "env TERM=xterm-256color ssh";
+      icat= "kitten icat";
       cdnrf = "cd /home/pasha/git/nrf-architecture";
       flashsector = "nrfjprog -f NRF91 --sectorerase --verify --reset --program";
       flashchip = "nrfjprog -f NRF91 --chiperase --verify --reset --program";
