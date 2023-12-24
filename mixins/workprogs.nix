@@ -11,7 +11,6 @@
 
       logseq
       leafpad
-      free42
       feh
       zathura
 

@@ -63,6 +63,8 @@ in
           "shift+Print"             = "exec ${pkgs.grim}/bin/grim - | ${pkgs.wl-clipboard}/bin/wl-copy -t image/png";
           "Print"                   = "exec ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp -d)\" - | ${pkgs.wl-clipboard}/bin/wl-copy -t image/png";
 
+          "${modifier}+c" = "exec ${pkgs.free42}/bin/free42dec";
+
           "${modifier}+control+Prior" = "focus left";
           "${modifier}+control+Next"  = "focus right";
           "XF86Back"                  = "focus left";
