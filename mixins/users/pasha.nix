@@ -8,6 +8,7 @@
       "wheel"
       "dialout"
       "plugdev"
+      "audio"
       "docker"
     ];
     openssh.authorizedKeys.keys = [
