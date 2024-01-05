@@ -23,7 +23,7 @@
       flashchip = "nrfjprog -f NRF91 --chiperase --verify --reset --program";
       flashprod = "nrfjprog -f NRF91 --sectorerase --verify --reset --program /home/pasha/git/nrf-architecture/production-firmware/build/zephyr/merged.hex";
       flashtest = "nrfjprog -f NRF91 --chiperase --verify --reset --program /home/pasha/git/nrf-architecture/test-firmware/build/zephyr/merged.hex";
-      flashlte = "nrfjprog -f NRF91 --chiperase --verify --reset --program /home/pasha/m/nrfmodemfirmware/mfw_nrf9160_1.3.5.zip";
+      flashlte = "nrfjprog -f NRF91 --verify --program /home/pasha/m/nrfmodemfirmware/mfw_nrf9160_1.3.6.zip";
       serialflashprod = "mcumgr image upload /home/pasha/git/nrf-architecture/production-firmware/build/zephyr/app_update.bin -c usb0";
       serialflashtest = "mcumgr image upload /home/pasha/git/nrf-architecture/test-firmware/build/zephyr/app_update.bin -c usb0";
       nrfreset = "nrfjprog -f NRF91 --reset";
