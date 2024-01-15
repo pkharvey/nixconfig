@@ -31,6 +31,8 @@
       wireserver = "(cd /home/pasha/git/nrf-architecture/wire-server && exec bundle exec ruby server.rb /dev/ttyUSB0 3901)";
       nrfcom = "picocom -q /dev/ttyUSB0 -b 38400";
       cucumber = "bundle exec cucumber";
+      code = "code --ozone-platform=wayland";
+      aebuild = "west build -b aeternum_nrf9160_ns";
     };
     interactiveShellInit = ''
       unalias che >/dev/null 2>&1
