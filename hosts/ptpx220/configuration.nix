@@ -26,6 +26,7 @@
       "${inputs.self}/mixins/ssh/sk_keys.nix"
       "${inputs.self}/mixins/nrfjprog-udev.nix"
       "${inputs.self}/mixins/dslogic-udev.nix"
+      "${inputs.self}/mixins/hackrfone-udev.nix"
       # ./modules/ups.nix
     ];
 
