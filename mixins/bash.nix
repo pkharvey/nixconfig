@@ -16,7 +16,7 @@
       shlvl="echo $SHLVL";
       n="nix-shell -p";
       r="nix repl";
-      cdnix="cd /home/pasha/git/nixconfig";
+      cdconf="cd /home/pasha/git/nixconfig";
       ssh = "env TERM=xterm-256color ssh";
       icat= "kitten icat";
       cdnrf = "cd /home/pasha/git/nrf-architecture";
