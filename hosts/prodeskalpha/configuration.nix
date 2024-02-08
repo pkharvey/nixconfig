@@ -7,7 +7,7 @@
     "${inputs.self}/mixins/locale.nix"
     "${inputs.self}/mixins/sway"
     "${inputs.self}/mixins/gammastep.nix"
-    "${inputs.self}/mixins/workprogs.nix"
+    "${inputs.self}/mixins/progs-work.nix"
     "${inputs.self}/mixins/editor/nvim.nix"
     "${inputs.self}/mixins/audio.nix"
     "${inputs.self}/mixins/intel_vm.nix"
