@@ -54,6 +54,7 @@ in
           { always = true; command = "${pkgs.mako}/bin/mako --default-timeout 3000"; }
         ];
         keybindings = lib.mkOptionDefault {
+          "${modifier}+F5" = "exec ${pkgs.wpa_supplicant_gui}/bin/wpa_gui";
           "${modifier}+F10" = "exec ${inputs.firefox.packages.${pkgs.hostPlatform.system}.firefox-nightly-bin}/bin/firefox";
           "${modifier}+F11" = "exec ${switchToRussian}";
           "${modifier}+F12" = "exec ${switchUSVariant}";
