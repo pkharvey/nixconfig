@@ -4,7 +4,7 @@
       enable = true;
       plugins = with pkgs.vimPlugins; [
         catppuccin-nvim
-        (nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars))
+        (nvim-treesitter.withPlugins (_: pkgs.vimPlugins.nvim-treesitter.allGrammars))
         telescope-nvim
         telescope-manix
         nvim-web-devicons
