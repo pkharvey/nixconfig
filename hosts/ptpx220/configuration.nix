@@ -89,7 +89,7 @@
       [ xdg-desktop-portal-wlr xdg-desktop-portal-gtk ];
   };
 
-  services.xserver.xkbOptions = "terminate:ctrl_alt_bksp,ctrl:swapcaps";
+  services.xserver.xkb.options = "terminate:ctrl_alt_bksp,ctrl:swapcaps";
 
   users.users.root.hashedPassword = lib.mkForce "$6$jjdykpb.kwVJ.wY4$sKFyUPK6HpWH3twrCodgWOu5EIPlzS/Zqa4kPWTOnpuzICRDAFXUrBisvWOEX464THhykP0xFxr674R8KjDzT1";
   users.users.pasha.hashedPassword = lib.mkForce "$6$0GAwzY9tiFg9$.XVNuKseZryk3LGtbtJ7cUJ5cL.A5w4.UFeZ5lKuRaycUbZjoOwR.M34EZcGu6Bn.3wgUjrui.j.pTBFYp3Ph0";
@@ -110,6 +110,6 @@
 
   hardware.rtl-sdr.enable = true;
 
-  system.stateVersion = "22.05";
+  system.stateVersion = "23.11";
 }
 

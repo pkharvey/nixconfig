@@ -1,4 +1,4 @@
-{ config, pkgs, ...}:
+{ config, pkgs, inputs, ...}:
 {
   programs.bash = {
     shellAliases = {
@@ -77,7 +77,7 @@
       {
               args="$@"
               [[ $# -eq 0 ]] && args='about:newtab'
-              command ${pkgs.firefox}/bin/firefox --new-tab --url "$args"
+              command ${inputs.firefox.packages.${pkgs.hostPlatform.system}.firefox-nightly-bin}/bin/firefox-nightly --new-tab --url "$args"
       }
 
       unalias ws >/dev/null 2>&1

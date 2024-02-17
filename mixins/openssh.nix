@@ -3,7 +3,7 @@
   services.openssh = {
     enable = true;
     openFirewall = lib.mkForce true;
-    settings.passwordAuthentication = false;
+    settings.PasswordAuthentication = false;
     settings.PermitRootLogin = lib.mkForce "no";
   };
 }

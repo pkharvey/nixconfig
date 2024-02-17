@@ -5,7 +5,7 @@
       libreoffice
       gimp
       inkscape
-      kicad
+      kicad-small
 
       element-desktop
 
@@ -44,8 +44,6 @@
       tty-clock
 
       picocom
-
-      atom
     ];
   };
 }

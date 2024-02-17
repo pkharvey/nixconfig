@@ -1,7 +1,7 @@
 {
   services.avahi = {
     openFirewall = true;
-    nssmdns = true; # Allows software to use Avahi to resolve. Useful for printer name resolving, for example.
+    nssmdns4 = true; # Allows software to use Avahi to resolve. Useful for printer name resolving, for example.
     enable = true;
     publish = {
       enable = true;

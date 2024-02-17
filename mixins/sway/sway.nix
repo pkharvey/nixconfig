@@ -17,7 +17,7 @@
   # other quirks.
   programs.sway.enable = true;
 
-  fonts.fonts = with pkgs; [ terminus_font_ttf font-awesome ];
+  fonts.packages = with pkgs; [ terminus_font_ttf font-awesome ];
   home-manager.users.pasha = { pkgs, ... }: {
 
     # Block auto-sway reload, Sway crashes if allowed to reload this way.
