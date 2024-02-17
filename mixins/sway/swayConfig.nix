@@ -123,14 +123,15 @@ in
             xkb_options = "ctrl:swapcaps";
           };
         };
+        window.titlebar = false;
+        bars =
+          [
+            {
+              mode = "hide";
+              statusCommand = "${pkgs.i3status}/bin/i3status";
+            }
+          ];
       };
-      config.bars =
-        [
-          {
-            mode = "hide";
-            statusCommand = "${pkgs.i3status}/bin/i3status";
-          }
-        ];
       wrapperFeatures = {
         base = false;
         gtk = false;
