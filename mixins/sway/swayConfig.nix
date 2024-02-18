@@ -55,6 +55,7 @@ in
         ];
         keybindings = lib.mkOptionDefault {
           "${modifier}+F5" = "exec ${pkgs.wpa_supplicant_gui}/bin/wpa_gui";
+          "${modifier}+F6" = "exec ${pkgs.pavucontrol}/bin/pavucontrol";
           "${modifier}+F10" = "exec ${inputs.firefox.packages.${pkgs.hostPlatform.system}.firefox-nightly-bin}/bin/firefox-nightly";
           "${modifier}+F11" = "exec ${switchToRussian}";
           "${modifier}+F12" = "exec ${switchUSVariant}";

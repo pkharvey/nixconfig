@@ -15,7 +15,6 @@
       zathura
 
       pulsemixer
-      pavucontrol
       wdisplays
 
       vlc
