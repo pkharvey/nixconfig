@@ -17,6 +17,7 @@
       n="nix-shell -p";
       r="nix repl";
       cdconf="cd /home/pasha/git/nixconfig";
+      cdpkgs="cd /home/pasha/git/nixpkgs";
       ssh = "env TERM=xterm-256color ssh";
       icat= "kitten icat";
       cdnrf = "cd /home/pasha/git/nrf-architecture";
