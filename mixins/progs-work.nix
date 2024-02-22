@@ -15,7 +15,6 @@
       zathura
 
       pulsemixer
-      wdisplays
 
       vlc
       youtube-dl
