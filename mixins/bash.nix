@@ -84,7 +84,15 @@
       unalias ws >/dev/null 2>&1
       ws()
       {
-              command swaymsg workspace "$@"
+        ORIG_WS=$(swaymsg -t get_workspaces | ${pkgs.jq}/bin/jq -r '.[] | select(.focused == true).name')
+        DEST_WS="''${1}"
+        shift
+        command swaymsg workspace "$DEST_WS"
+        if [ "$#" -gt 0 ]; then
+          "$@"
+          CURRENT_WS=$(swaymsg -t get_workspaces | ${pkgs.jq}/bin/jq -r '.[] | select(.focused == true).name')
+          [[ "''${DEST_WS}" == "''${CURRENT_WS}" ]] && command swaymsg workspace "''${ORIG_WS}"
+        fi
       }
 
       unalias xtitle >/dev/null 2>&1
