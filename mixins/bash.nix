@@ -95,6 +95,20 @@
         fi
       }
 
+      unalias hexb64 >/dev/null 2>&1
+      hexb64()
+      {
+        input="''${1:-$(</dev/stdin)}"
+        echo "''${input}" | ${pkgs.vim.xxd}/bin/xxd -r -p | ${pkgs.coreutils}/bin/base64
+      }
+
+      unalias b64hex >/dev/null 2>&1
+      b64hex()
+      {
+        input="''${1:-$(</dev/stdin)}"
+        echo "''${input}" | ${pkgs.coreutils}/bin/base64 -d | ${pkgs.vim.xxd}/bin/xxd -p -c 0
+      }
+
       unalias xtitle >/dev/null 2>&1
       xtitle()
       {
