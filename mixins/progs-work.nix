@@ -39,7 +39,7 @@
       ripgrep
       fd
       hyperfine
-      tty-clock
+      peaclock
 
       picocom
     ];
