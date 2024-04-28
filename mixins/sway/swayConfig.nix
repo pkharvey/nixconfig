@@ -1,5 +1,15 @@
 { pkgs, lib, config, inputs, ... }:
 let
+  trackPrevFocus = pkgs.writeScript "trackPrevFocus.sh" ''
+    prev_focus=$(swaymsg -r -t get_seats | ${pkgs.jq}/bin/jq '.[0].focus')
+
+    swaymsg -m -t subscribe '["window"]' | \
+      ${pkgs.jq}/bin/jq --unbuffered 'select(.change == "focus").container.id' | \
+      while read new_focus; do
+        swaymsg "[con_id=''${prev_focus}] mark --add _prev" &>/dev/null
+        prev_focus=$new_focus
+      done
+  '';
   switchToRussian = pkgs.writeScript "switchToRussian.sh" ''
     currentLayout=$(swaymsg -t get_inputs -r | ${pkgs.jq}/bin/jq -r "[.[] | select(.xkb_active_layout_name != null)][0].xkb_active_layout_name")
     if [ "$currentLayout" = "Russian" ]; then
@@ -91,6 +101,7 @@ in
           "${modifier}+Tab"           = "workspace back_and_forth";
           "${modifier}+Shift+Tab"     = "move container to workspace back_and_forth";
           "${modifier}+Control+Tab"   = "move container to workspace back_and_forth; workspace back_and_forth";
+          "${modifier}+Caps_Lock"     = "[con_mark=_prev] focus";
 
           "XF86AudioMute"        = "exec ${pkgs.pamixer} --toggle-mute";
           "XF86AudioLowerVolume" = "exec ${pkgs.pamixer} --decrease 5";
