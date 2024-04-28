@@ -43,7 +43,7 @@
             home-manager.useUserPackages = true;
             home-manager.users.pasha = {
               home.username = "pasha";
-              home.stateVersion = "22.11";
+              home.stateVersion = "23.11";
               home.homeDirectory = "/home/pasha";
             };
           }
