@@ -33,6 +33,7 @@
       gensteps = "(gr && echo -n 'Generating steps within ' && pwd && cd wire-server && bundle exec ruby generate_step_header.rb ../test-firmware/src/steps.h)";
       wireserver = "(gr && echo -n 'Starting wire server within ' && pwd && cd wire-server && bundle exec ruby server.rb /dev/ttyUSB0 3901)";
       nrfcom = "picocom -q /dev/ttyUSB0 -b 38400";
+      wiocom = "picocom -q /dev/ttyUSB0 -b 9600 --omap crlf";
       cucumber = "bundle exec cucumber";
       code = "code --ozone-platform=wayland";
       aebuild = "west build -b aeternum_nrf9160_ns";
