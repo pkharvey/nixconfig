@@ -19,6 +19,7 @@
     "${inputs.self}/mixins/tailscale.nix"
     "${inputs.self}/mixins/openssh.nix"
     "${inputs.self}/mixins/ssh/sk_keys.nix"
+    "${inputs.self}/mixins/stlink.nix"
     "${inputs.self}/mixins/nrfjprog-udev.nix"
     "${inputs.self}/mixins/dslogic-udev.nix"
     "${inputs.self}/mixins/md380-udev.nix"
