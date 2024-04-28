@@ -1,6 +1,7 @@
 { config, pkgs, inputs, ...}:
 {
-  programs.bash = {
+  home-manager.users.pasha.programs.bash = {
+    enable = true;
     shellAliases = {
       cls="clear";
       ga="git add";
@@ -36,7 +37,7 @@
       code = "code --ozone-platform=wayland";
       aebuild = "west build -b aeternum_nrf9160_ns";
     };
-    interactiveShellInit = ''
+    initExtra = ''
       unalias che >/dev/null 2>&1
       che()
       {
