@@ -3,7 +3,7 @@
   home-manager.users.pasha.programs.bash = {
     enable = true;
     shellAliases = {
-      cls="clear";
+      cls="printf '\\033[2J\\033[3J\\033[1;1H'";
       ga="git add";
       gb="git branch";
       gc="git checkout";
