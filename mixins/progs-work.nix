@@ -6,6 +6,7 @@
       gimp
       inkscape
       kicad-small
+      remmina
 
       element-desktop
 
