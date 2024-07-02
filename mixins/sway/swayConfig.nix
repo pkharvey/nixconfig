@@ -75,6 +75,7 @@ in
 
           "shift+Print"             = "exec ${pkgs.grim}/bin/grim - | ${pkgs.wl-clipboard}/bin/wl-copy -t image/png";
           "Print"                   = "exec ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp -d)\" - | ${pkgs.wl-clipboard}/bin/wl-copy -t image/png";
+          "${modifier}+p" = "exec ${pkgs.wlrctl}/bin/wlrctl keyboard type $(${pkgs.wl-clipboard}/bin/wl-paste --primary)";
 
           "${modifier}+c" = "exec ${pkgs.free42}/bin/free42dec";
 
