@@ -10,7 +10,6 @@
 
       element-desktop
 
-      logseq
       leafpad
       feh
       zathura
@@ -18,7 +17,6 @@
       pulsemixer
 
       vlc
-      youtube-dl
       wget
       ffmpeg
       mpv

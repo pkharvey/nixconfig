@@ -6,7 +6,7 @@
   home-manager.users.pasha = { pkgs, ... }: {
     home.packages = with pkgs; [
       stm32cubemx
-      stm32loader
+      #stm32loader
       stm32flash
       stm8flash
       stlink

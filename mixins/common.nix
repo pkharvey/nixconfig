@@ -6,7 +6,7 @@
     gnumake42
   ];
   nix = {
-    package = pkgs.nixUnstable;
+    package = pkgs.nixVersions.git;
     extraOptions =
       let empty_registry = builtins.toFile "empty-flake-registry.json" ''{"flakes":[],"version":2}''; in
       ''

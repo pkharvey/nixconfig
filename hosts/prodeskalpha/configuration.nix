@@ -33,6 +33,8 @@
     efi.canTouchEfiVariables = true;
   };
 
+  boot.kernelPackages = pkgs.zfs.latestCompatibleLinuxPackages;
+
   networking.hostName = "prodeskalpha";
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
   boot.tmp.useTmpfs = true;
