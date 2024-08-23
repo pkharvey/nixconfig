@@ -37,6 +37,7 @@
       cucumber = "bundle exec cucumber";
       code = "code --ozone-platform=wayland";
       aebuild = "west build -b aeternum_nrf9160_ns";
+      socks = "ssh -N -f -C -D 9090 mrflos@yunohost.yeswiki.net -p 6742";
     };
     initExtra = ''
       unalias che >/dev/null 2>&1
