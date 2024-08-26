@@ -9,6 +9,7 @@
       italic_font      Iosevka NFM Medium Italic
       bold_italic_font Iosevka NFM Bold Italic
       font_size        12
+      disable_ligatures  always
     '';
     settings = {
       enable_audio_bell = false;
