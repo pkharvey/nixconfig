@@ -71,8 +71,8 @@
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
 
-  hardware.opengl = {
-    driSupport32Bit = true;
+  hardware.graphics = {
+    enable32Bit = true;
     enable = true;
   };
 
