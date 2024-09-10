@@ -22,6 +22,7 @@
     "${inputs.self}/mixins/stlink.nix"
     "${inputs.self}/mixins/nrfjprog-udev.nix"
     "${inputs.self}/mixins/dslogic-udev.nix"
+    "${inputs.self}/mixins/pulseview.nix"
     "${inputs.self}/mixins/md380-udev.nix"
   ];
 
