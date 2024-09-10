@@ -64,6 +64,7 @@ in
           { always = true; command = "${pkgs.mako}/bin/mako --default-timeout 3000"; }
         ];
         keybindings = lib.mkOptionDefault {
+          "${modifier}+F2" = "exec ${pkgs.swaylock}/bin/swaylock";
           "${modifier}+F5" = "exec ${pkgs.wpa_supplicant_gui}/bin/wpa_gui";
           "${modifier}+F6" = "exec ${pkgs.pavucontrol}/bin/pavucontrol";
           "${modifier}+F7" = "exec ${pkgs.wdisplays}/bin/wdisplays";
