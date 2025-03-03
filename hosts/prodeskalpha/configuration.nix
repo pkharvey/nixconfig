@@ -24,6 +24,7 @@
     "${inputs.self}/mixins/dslogic-udev.nix"
     "${inputs.self}/mixins/pulseview.nix"
     "${inputs.self}/mixins/md380-udev.nix"
+    "${inputs.self}/mixins/wireshark.nix"
   ];
 
   virtualisation.docker.enable = true;

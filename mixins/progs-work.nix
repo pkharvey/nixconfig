@@ -37,7 +37,6 @@
       hyperfine
 
       mosquitto
-      wireshark
 
       timewarrior
       peaclock
