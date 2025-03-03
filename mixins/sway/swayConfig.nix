@@ -65,9 +65,11 @@ in
         ];
         keybindings = lib.mkOptionDefault {
           "${modifier}+F2" = "exec ${pkgs.swaylock}/bin/swaylock";
+          "${modifier}+F4" = "exec ${pkgs.basiliskii}/bin/BasiliskII";
           "${modifier}+F5" = "exec ${pkgs.wpa_supplicant_gui}/bin/wpa_gui";
           "${modifier}+F6" = "exec ${pkgs.pavucontrol}/bin/pavucontrol";
           "${modifier}+F7" = "exec ${pkgs.wdisplays}/bin/wdisplays";
+          "${modifier}+F9" = "exec ${pkgs.xfce.mousepad}/bin/mousepad";
           "${modifier}+F10" = "exec ${inputs.firefox.packages.${pkgs.hostPlatform.system}.firefox-nightly-bin}/bin/firefox-nightly";
           "${modifier}+F11" = "exec ${switchToRussian}";
           "${modifier}+F12" = "exec ${switchUSVariant}";

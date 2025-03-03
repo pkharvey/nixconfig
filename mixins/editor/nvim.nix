@@ -12,7 +12,7 @@
         nvim-lspconfig
         vim-nix
         csv-vim
-        nvim-compe
+        nvim-cmp
         vim-oscyank
         gitsigns-nvim
         nvim-cmp

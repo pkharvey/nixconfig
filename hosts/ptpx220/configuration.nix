@@ -35,8 +35,6 @@
   virtualisation.docker.enable = true;
 
   boot = {
-    # Use latest kernel: https://github.com/NixOS/nixpkgs/issues/30335#issuecomment-336031992
-    kernelPackages = pkgs.zfs.latestCompatibleLinuxPackages;
     # Use the systemd-boot EFI boot loader, instead of GRUB.
     loader = {
       systemd-boot = {

@@ -20,7 +20,7 @@
   fonts.packages = with pkgs; [
     terminus_font_ttf
     font-awesome
-    (nerdfonts.override { fonts = [ "Iosevka" ]; })
+    nerd-fonts.iosevka
   ];
   home-manager.users.pasha = { pkgs, ... }: {
 

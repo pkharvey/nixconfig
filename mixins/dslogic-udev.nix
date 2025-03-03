@@ -5,7 +5,7 @@
   '';
   home-manager.users.pasha = { pkgs, ... }: {
     home.packages = with pkgs; [
-      dsview
+      #      dsview
     ];
   };
 }

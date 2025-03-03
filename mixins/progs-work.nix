@@ -10,7 +10,6 @@
 
       element-desktop
 
-      leafpad
       feh
       zathura
 
@@ -20,8 +19,6 @@
       wget
       ffmpeg
       mpv
-
-      ruby
 
       btop
       iotop
@@ -38,8 +35,14 @@
       ripgrep
       fd
       hyperfine
+
+      mosquitto
+      wireshark
+
+      timewarrior
       peaclock
 
+      tio
       picocom
 
       mob

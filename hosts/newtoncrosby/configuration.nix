@@ -34,7 +34,6 @@
   #boot.kernelPackages = pkgs.linuxPackages_latest;
   #boot.kernelPackages = pkgs.linuxPackages_5_14;
   #boot.kernelPackages = pkgs.linuxPackages_5_4;
-  boot.kernelPackages = pkgs.zfsUnstable.latestCompatibleLinuxPackages;
 
   boot.supportedFilesystems = [ "zfs" ];
   networking.hostId = "d25df661";
