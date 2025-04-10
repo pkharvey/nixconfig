@@ -46,10 +46,22 @@
 
       mob
       vscodium
+
+      nrf-command-line-tools
     ];
 
     programs.direnv.enable = true;
     programs.direnv.nix-direnv.enable = true;
 
+  };
+
+  nixpkgs = {
+    config.allowUnfreePredicate = pkg: builtins.elem (pkgs.lib.getName pkg) [
+      "segger-jlink"
+    ];
+    config.segger-jlink.acceptLicense = true;
+    config.permittedInsecurePackages = [
+      "segger-jlink-qt4-810"
+    ];
   };
 }
