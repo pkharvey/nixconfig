@@ -10,6 +10,7 @@ let
         prev_focus=$new_focus
       done
   '';
+  light = "${pkgs.light}/bin/light";
   switchToRussian = pkgs.writeScript "switchToRussian.sh" ''
     currentLayout=$(swaymsg -t get_inputs -r | ${pkgs.jq}/bin/jq -r "[.[] | select(.xkb_active_layout_name != null)][0].xkb_active_layout_name")
     if [ "$currentLayout" = "Russian" ]; then
@@ -118,6 +119,9 @@ in
           "XF86AudioPrev" = "exec ${pkgs.playerctl}/bin/playerctl previous";
           "XF86AudioPlay" = "exec ${pkgs.playerctl}/bin/playerctl play-pause";
           "XF86AudioNext" = "exec ${pkgs.playerctl}/bin/playerctl next";
+
+          "XF86MonBrightnessUp"   = "exec ${light} -A 5";
+          "XF86MonBrightnessDown" = "exec ${light} -U 5";
 
           "${modifier}+0" = "workspace number 10";
           "${modifier}+Shift+0" = "move container to workspace number 10";

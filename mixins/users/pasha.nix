@@ -9,6 +9,7 @@
       "dialout"
       "plugdev"
       "audio"
+      "video"
       "docker"
       "wireshark"
     ];

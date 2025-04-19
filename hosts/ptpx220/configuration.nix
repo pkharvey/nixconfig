@@ -8,7 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./modules/wireless.nix
+      "${inputs.self}/mixins/wireless.nix"
       "${inputs.self}/mixins/bash.nix"
       "${inputs.self}/mixins/kitty.nix"
       "${inputs.self}/mixins/locale.nix"

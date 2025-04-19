@@ -58,6 +58,7 @@
   nixpkgs = {
     config.allowUnfreePredicate = pkg: builtins.elem (pkgs.lib.getName pkg) [
       "segger-jlink"
+      "nrf-command-line-tools"
     ];
     config.segger-jlink.acceptLicense = true;
     config.permittedInsecurePackages = [

@@ -1,8 +1,12 @@
+{ pkgs, ... }:
 {
   # Configures a list of networks I want to connect to.
   # NOT: $ mkpasswd -m sha-512
   # $ wpa_passphrase SSID password
+  environment.systemPackages = [ pkgs.wpa_supplicant_gui ];
+  #networking.wireless.allowAuxiliaryImperativeNetworks = true;
   networking.wireless.userControlled.enable = true;
+  networking.wireless.enable = true;
   networking.wireless.networks = { 
     MCH2022-open.psk = null;
     Pixel_1852.pskRaw = "0929bd89543ec23ee382b47273b1e54cf79692acc40e4067a56ae662dc553a5a";
