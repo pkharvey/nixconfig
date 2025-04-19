@@ -6,7 +6,8 @@
   nix = {
     buildMachines = [{
       hostName = "100.107.23.115";
-      sshUser = "ssh-ng://nix-ssh";
+      sshUser = "nix-ssh";
+      protocol = "ssh-ng";
       system = "x86_64-linux";
       maxJobs = 24;
       speedFactor = 2;

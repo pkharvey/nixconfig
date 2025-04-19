@@ -11,7 +11,7 @@
       ./modules/sway.nix
       ./modules/wireless.nix
       ./modules/audio.nix
-      ./modules/remote-builds.nix
+      "${inputs.self}/mixins/remote-builds.nix"
       # ./modules/ups.nix
     ];
 

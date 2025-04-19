@@ -14,6 +14,7 @@
     "${inputs.self}/mixins/users/disableMutableUsers.nix"
     "${inputs.self}/mixins/common.nix"
     "${inputs.self}/mixins/tailscale.nix"
+    "${inputs.self}/mixins/remote-builds.nix"
     "${inputs.self}/mixins/openssh.nix"
     "${inputs.self}/mixins/ssh/sk_keys.nix"
     "${inputs.self}/mixins/zram.nix"
