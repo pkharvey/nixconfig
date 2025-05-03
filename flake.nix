@@ -34,7 +34,9 @@
     };
 
     packages.x86_64-linux = {
-      pkhmsgo-autoinstaller-image = disko-utils.mkAutoInstaller self.nixosConfigurations.pkhmsgo;
+      pkhmsgo-autoinstaller-image = disko-utils.mkAutoInstaller {
+        nixosConfiguration = self.nixosConfigurations.pkhmsgo;
+      };
     };
 
     nixosConfigurations = {
