@@ -389,6 +389,22 @@
         "type": "indirect"
       }
     },
+    "nur": {
+      "locked": {
+        "lastModified": 1691178333,
+        "narHash": "sha256-vSRBbvFMv79AZkb0IxKz7qU7Hiy3JDRpMNG8lMpgCdI=",
+        "owner": "nix-community",
+        "repo": "nur",
+        "rev": "e2c6f6f75cd712159314f08d1b4e3490a7073826",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "nur",
+        "rev": "e2c6f6f75cd712159314f08d1b4e3490a7073826",
+        "type": "github"
+      }
+    },
     "robotnix": {
       "inputs": {
         "androidPkgs": "androidPkgs",
@@ -419,6 +435,7 @@
         "nixinate": "nixinate",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_4",
+        "nur": "nur",
         "robotnix": "robotnix",
         "waveforms": "waveforms"
       }

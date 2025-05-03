@@ -17,11 +17,12 @@
       url = "github:matthewcroughan/mobile-nixos/mc/latest-64";
       flake = false;
     };
+    nur.url = "github:nix-community/nur/e2c6f6f75cd712159314f08d1b4e3490a7073826";
     disko.url = "github:nix-community/disko";
     disko-utils.url = "github:matthewcroughan/disko-utils";
   };
 
-  outputs = { self, nixpkgs, home-manager, robotnix, firefox, waveforms, nixinate, nixos-hardware, mobile-nixos, disko, disko-utils, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, robotnix, firefox, waveforms, nixinate, nixos-hardware, mobile-nixos, nur, disko, disko-utils, ... }@inputs: {
 
     apps = nixinate.nixinate.x86_64-linux self;
 
