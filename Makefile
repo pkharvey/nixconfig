@@ -15,6 +15,9 @@ boot:
 test:
 	sudo nixos-rebuild test --flake .#${HOSTNAME} -L
 
+dry-build:
+	nixos-rebuild dry-build --flake .#${HOSTNAME} -L
+
 update:
 	nix flake update
 
