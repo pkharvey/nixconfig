@@ -16,6 +16,7 @@
     openssh.authorizedKeys.keys = [
       "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIApZlVXP4T+TMUbLhduKIA4yF8vmJY1Boi+Hoh0mC20mAAAABHNzaDo=" # backup key
       "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIMKBLIyVMKoh2zkGCKQYA4vJoHQ8y4faKcyq6K4ItrtsAAAABHNzaDo=" # dailyuse key
+      "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIGbfT6AaYFSR2uJXWLfjL9qBNq8rt10snck51Zd/2OGmAAAABHNzaDo=" # nano key
     ];
   };
 }
