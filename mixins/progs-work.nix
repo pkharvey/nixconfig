@@ -9,6 +9,7 @@
       remmina
 
       element-desktop
+      signal-desktop
 
       feh
       zathura
