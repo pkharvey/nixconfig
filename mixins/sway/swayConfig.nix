@@ -56,9 +56,6 @@ in
 
   home-manager.users.pasha = { pkgs, ... }: {
     wayland.windowManager.sway = {
-#      extraConfig = ''
-#        xwayland disable
-#      '';
       enable = true;
       config = rec {
         startup = [
@@ -67,15 +64,21 @@ in
         keybindings = lib.mkOptionDefault {
           "${modifier}+F2" = "exec ${pkgs.swaylock}/bin/swaylock";
           "${modifier}+F4" = "exec ${pkgs.basiliskii}/bin/BasiliskII";
-          "${modifier}+F5" = "exec ${pkgs.wpa_supplicant_gui}/bin/wpa_gui";
+          #"${modifier}+F5" = "exec ${pkgs.wpa_supplicant_gui}/bin/wpa_gui";
+          "${modifier}+F5" = "exec ${pkgs.iwgtk}/bin/iwgtk";
           "${modifier}+F6" = "exec ${pkgs.pavucontrol}/bin/pavucontrol --tab=3";
           "${modifier}+F7" = "exec ${pkgs.wdisplays}/bin/wdisplays";
+          "${modifier}+F8" = "exec blueman-manager";
           "${modifier}+F9" = "exec ${pkgs.xfce.mousepad}/bin/mousepad";
           "${modifier}+F10" = "exec ${inputs.firefox.packages.${pkgs.hostPlatform.system}.firefox-nightly-bin}/bin/firefox-nightly";
           "${modifier}+F11" = "exec ${switchToRussian}";
           "${modifier}+F12" = "exec ${switchUSVariant}";
 
-          "${modifier}+control+Escape" = "kill";
+          #"${modifier}+control+Escape" = "kill";
+          "${modifier}+Escape" = "kill";
+
+          "${modifier}+End"  = "exec ${pkgs.timewarrior}/bin/timew stop";
+          "${modifier}+Home" = "exec ${pkgs.timewarrior}/bin/timew continue";
 
           "shift+Print"             = "exec ${pkgs.grim}/bin/grim - | ${pkgs.wl-clipboard}/bin/wl-copy -t image/png";
           "Print"                   = "exec ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp -d)\" - | ${pkgs.wl-clipboard}/bin/wl-copy -t image/png";
@@ -120,8 +123,10 @@ in
           "XF86AudioPlay" = "exec ${pkgs.playerctl}/bin/playerctl play-pause";
           "XF86AudioNext" = "exec ${pkgs.playerctl}/bin/playerctl next";
 
-          "XF86MonBrightnessUp"   = "exec ${light} -A 5";
-          "XF86MonBrightnessDown" = "exec ${light} -U 5";
+          "XF86MonBrightnessUp"         = "exec ${light} -A 1";
+          "XF86MonBrightnessDown"       = "exec ${light} -U 1";
+          "Shift+XF86MonBrightnessUp"   = "exec ${light} -A 5";
+          "Shift+XF86MonBrightnessDown" = "exec ${light} -U 5";
 
           "${modifier}+0" = "workspace number 10";
           "${modifier}+Shift+0" = "move container to workspace number 10";
@@ -153,6 +158,15 @@ in
             }
           ];
       };
+      extraConfig = ''
+        #xwayland disable
+        for_window [app_id="iwgtk"]            floating enable, sticky enable
+        for_window [app_id="pavucontrol"]      floating enable, sticky enable
+        for_window [app_id="wdisplays"]        fullscreen enable
+        for_window [app_id="blueman-manager"]  floating enable, sticky enable
+        for_window [app_id="free42dec"]        floating enable, sticky enable
+        for_window [app_id="free42bin"]        floating enable, sticky enable
+      '';
       wrapperFeatures = {
         base = false;
         gtk = false;

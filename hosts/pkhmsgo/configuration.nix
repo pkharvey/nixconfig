@@ -2,7 +2,8 @@
 {
   imports = [
     ./disko.nix
-    "${inputs.self}/mixins/wireless.nix"
+    #"${inputs.self}/mixins/wireless.nix"
+    "${inputs.self}/mixins/wireless-iwd.nix"
     "${inputs.self}/mixins/bash.nix"
     "${inputs.self}/mixins/locale.nix"
     "${inputs.self}/mixins/progs-work.nix"
@@ -24,6 +25,8 @@
   boot.kernelPackages = pkgs.lib.mkForce pkgs.linuxPackages_6_13;
 
   services.fwupd.enable = true;
+
+  services.blueman.enable = true;
 
   boot.loader = {
     systemd-boot.enable = true;
