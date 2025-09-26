@@ -22,7 +22,7 @@
   ];
 
   # override kernel introduced by nixos-hardware
-  boot.kernelPackages = pkgs.lib.mkForce pkgs.linuxPackages_6_13;
+  boot.kernelPackages = pkgs.lib.mkForce pkgs.linuxPackages_latest;
 
   services.fwupd.enable = true;
 
