@@ -66,6 +66,9 @@ in
           "${modifier}+F4" = "exec ${pkgs.basiliskii}/bin/BasiliskII";
           #"${modifier}+F5" = "exec ${pkgs.wpa_supplicant_gui}/bin/wpa_gui";
           "${modifier}+F5" = "exec ${pkgs.iwgtk}/bin/iwgtk";
+          "${modifier}+Shift+F5" = ''
+exec ${pkgs.iwd}/bin/iwctl station "$(${pkgs.iwd}/bin/iwctl device list | awk '/station/ {print $2; exit}')" scan
+'';
           "${modifier}+F6" = "exec ${pkgs.pavucontrol}/bin/pavucontrol --tab=3";
           "${modifier}+F7" = "exec ${pkgs.wdisplays}/bin/wdisplays";
           "${modifier}+F8" = "exec blueman-manager";
